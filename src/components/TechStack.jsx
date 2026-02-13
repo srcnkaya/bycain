@@ -6,7 +6,6 @@ const TechStack = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // [MANUAL FIX]: Update with your actual tech stack
   const techStack = [
     {
       id: 1,
@@ -77,7 +76,7 @@ const TechStack = () => {
   };
 
   return (
-    <section id="tech-stack" className="section-padding bg-luxury-black text-luxury-white">
+    <section id="tech-stack" className="py-20 px-4 md:px-8 lg:px-20 bg-luxury-black text-luxury-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -86,55 +85,48 @@ const TechStack = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Tech Stack
           </h2>
-          <p className="text-luxury-platinum max-w-2xl mx-auto text-lg">
-            {/* [MANUAL FIX]: Update tech stack description */}
+          <p className="text-luxury-platinum max-w-2xl mx-auto text-base sm:text-lg px-4">
             The tools and technologies I use to build fast, scalable, and beautiful digital products.
           </p>
         </motion.div>
 
-        {/* Tech Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
         >
           {techStack.map((tech) => (
             <motion.div
               key={tech.id}
               variants={itemVariants}
-              className="group relative bg-luxury-charcoal border border-luxury-gray hover:border-luxury-slate p-8 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-luxury-slate/20"
+              className="group relative bg-luxury-charcoal border border-luxury-gray hover:border-luxury-slate p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-luxury-slate/20"
             >
-              {/* Icon */}
               <div className="text-luxury-slate group-hover:text-luxury-platinum transition-colors mb-4">
                 {tech.icon}
               </div>
 
-              {/* Name */}
-              <h3 className="text-lg font-semibold mb-1 group-hover:text-luxury-slate transition-colors">
+              <h3 className="text-base sm:text-lg font-semibold mb-1 group-hover:text-luxury-slate transition-colors">
                 {tech.name}
               </h3>
 
-              {/* Category */}
-              <p className="text-sm text-luxury-slate/60 group-hover:text-luxury-slate/80 transition-colors">
+              <p className="text-xs sm:text-sm text-luxury-slate/60 group-hover:text-luxury-slate/80 transition-colors">
                 {tech.category}
               </p>
 
-              {/* Hover effect border */}
               <div className="absolute inset-0 rounded-2xl border-2 border-luxury-slate opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Bottom text */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="text-center mt-16 pt-12 border-t border-luxury-gray"
+          className="text-center mt-16 pt-12 border-t border-luxury-gray px-4"
         >
           <p className="text-luxury-platinum/70">
             Always learning and exploring new technologies to deliver better solutions.
