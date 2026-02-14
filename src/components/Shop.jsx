@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, Tag, ExternalLink } from 'lucide-react';
 import { products, categories } from '../data/products';
+import ImageGallery from './ImageGallery';
 
 const Shop = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -88,20 +89,11 @@ const Shop = () => {
                 variants={itemVariants}
                 className="bg-white border border-luxury-slateLight overflow-hidden group hover:shadow-xl hover:shadow-luxury-slate/10 hover:border-luxury-slate transition-all duration-500 rounded-2xl flex flex-col"
               >
-              <div className="aspect-[4/3] bg-luxury-slateLight relative overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-luxury-slate">
-                  <div className="text-center">
-                    <ShoppingBag className="w-12 h-12 mx-auto mb-2 opacity-30" />
-                    <span className="text-sm">Product Image</span>
-                  </div>
-                </div>
-                
-                {product.featured && (
-                  <div className="absolute top-4 right-4 bg-luxury-black text-luxury-white px-3 py-1 text-xs tracking-wider">
-                    FEATURED
-                  </div>
-                )}
-              </div>
+              <ImageGallery 
+                images={product.images} 
+                productTitle={product.title}
+                featured={product.featured}
+              />
 
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center gap-2 mb-3">

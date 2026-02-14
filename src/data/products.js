@@ -1,5 +1,6 @@
 // Product Data File
 // Add, remove, or edit products here without touching the Shop component
+// IMAGES: Now supports multiple images per product - use images array instead of single image
 
 export const products = [
   {
@@ -9,12 +10,11 @@ export const products = [
     price: 19,
     category: "Templates",
     tags: ["React", "Tailwind"],
-    image: "/products/agency-template.jpg", // [MANUAL FIX]: Add your product image path
-    // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
+    images: ["/products/artisty1.jpeg","/products/artisty2.jpeg","/products/artisty3.jpeg",
+      "/products/artisty4.jpeg","/products/artisty6.jpeg","/products/artisty5.jpeg","/products/artisty.jpeg"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
-    // [MANUAL FIX]: Add your live preview/demo URL here
     previewUrl: "https://your-demo-site.vercel.app",
-    featured: true,
+    featured: false,
   },
   {
     id: 2,
@@ -23,12 +23,10 @@ export const products = [
     price: 19,
     category: "Templates",
     tags: ["HTML", "CSS", "JavaScript"],
-    image: "/products/saas-starter.jpg", // [MANUAL FIX]: Add your product image path
-    // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
+    images: ["/products/barber3.jpeg","/products/barber4.jpeg","/products/barber5.jpeg","/products/barber6.jpeg","/products/barber.jpeg","/products/barber1.jpeg","/products/barber2.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
-    // [MANUAL FIX]: Add your live preview/demo URL here
     previewUrl: "https://your-saas-demo.vercel.app",
-    featured: true,
+    featured: false,
   },
   {
     id: 3,
@@ -37,10 +35,8 @@ export const products = [
     price: 19,
     category: "Templates",
     tags: ["HTML", "CSS", "JavaScript",'React','tailwind'],
-    image: "/products/portfolio-dark.jpg", // [MANUAL FIX]: Add your product image path
-    // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
+    images: ["/products/bio.png","/products/bio2.png"], // Example: Multiple images
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
-    // [MANUAL FIX]: Add your live preview/demo URL here
     previewUrl: "https://your-portfolio-demo.vercel.app",
     featured: false,
   },
@@ -51,12 +47,11 @@ export const products = [
     price: 19,
     category: "Templates",
     tags: ['HTML', 'CSS', 'JavaScript'],
-    image: "/products/ui-kit.jpg", // [MANUAL FIX]: Add your product image path
-    // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
+    images: ["/products/deli.jpeg","/products/deli1.jpeg","/products/deli2.jpeg","/products/deli3.jpeg",
+      "/products/deli4.jpeg","/products/deli5.jpeg","/products/deli6.jpeg","/products/deli7.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
-    // [MANUAL FIX]: Add your live preview/demo URL here
     previewUrl: "https://your-components-demo.vercel.app",
-    featured: true,
+    featured: false,
   },
   {
     id: 5,
@@ -65,26 +60,24 @@ export const products = [
     price: 19,
     category: "Templates",
     tags: ["HTML", "CSS", "JavaScript",'tailwind'],
-    image: "/products/ecommerce-ui.jpg", // [MANUAL FIX]: Add your product image path
-    // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
+    images: ["/products/gym5.jpeg","/products/gym1.jpeg","/products/gym2.jpeg","/products/gym3.jpeg","/products/gym4.jpeg",
+      "/products/gym6.jpeg","/products/gym7.jpeg","/products/gym8.jpeg","/products/gym9.jpeg","/products/gym10.jpeg","/products/gym11.jpeg"
+    ], // Add multiple images here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
-    // [MANUAL FIX]: Add your live preview/demo URL here
     previewUrl: "https://your-ecommerce-demo.vercel.app",
     featured: false,
   },
   {
     id: 6,
     title: "NeonWave Audio",
-    description: "A professional, cyberpunk-themed website template designed specifically for **Music Producers**, **Beatmakers**, and **DJs** looking to sell instrumentals online.",
+    description: "A professional, cyberpunk-themed website template designed specifically for Music Producers, Beatmakers, and DJs looking to sell instrumentals online.",
     price: 19,
     category: "Templates",
     tags: ["HTML", "Tailwind", "JavaScript"],
-    image: "/products/landing-bundle.jpg", // [MANUAL FIX]: Add your product image path
-    // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
+    images: ["/products/neon7.jpeg","/products/neon.jpeg","/products/neon1.jpeg","/products/neon2.jpeg","/products/neon3.jpeg","/products/neon4.jpeg","/products/neon5.jpeg","/products/neon6.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
-    // [MANUAL FIX]: Add your live preview/demo URL here
     previewUrl: "https://your-landing-demo.vercel.app",
-    featured: true,
+    featured: false,
   },
 ];
 

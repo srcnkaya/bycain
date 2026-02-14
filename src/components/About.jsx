@@ -28,7 +28,7 @@ const About = () => {
           >
             {/* [MANUAL FIX]: Write your minimalist bio here */}
             <p className="text-lg leading-relaxed text-luxury-charcoal">
-              I'm ByCain, a developer and entrepreneur based in Toronto, focused on building 
+              I'm Cain, a developer and entrepreneur based in Toronto, focused on building 
               digital products that solve real problems.
             </p>
 

@@ -3,6 +3,22 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 
+// Custom Telegram Icon Component
+const TelegramIcon = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.626 3.225 1.241 4.84 1.858.224.86.439 1.718.67 2.574.174.654.729 1.17 1.416 1.164.39-.018.77-.21 1.07-.474 1.007-.88 2.016-1.757 3.025-2.635 1.407 1.177 2.817 2.355 4.227 3.533.448.318 1.013.465 1.578.436 1.124-.045 1.653-.98 1.902-2.033.777-3.265 1.556-6.532 2.335-9.797.312-1.31.62-2.619.927-3.928.248-1.06-.102-2.247-1.232-2.73z" />
+    <path d="M9.37 11.947 11 16l2-5.5" />
+  </svg>
+);
+
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -13,7 +29,7 @@ const Contact = () => {
       name: "Email",
       icon: <Mail className="w-6 h-6" />,
       link: "mailto:info@bycain.com.com", // Update with your email
-      handle: "info@bycain.com.com"
+      handle: "info@bycain.com"
     },
     /*{
       name: "GitHub",
@@ -39,6 +55,12 @@ const Contact = () => {
       link: "https://instagram.com/heyimcain", // Update with your Instagram
       handle: "@heyimcain"
     },
+     {
+      name: "Telegram",
+      icon: <TelegramIcon className="w-6 h-6" />,
+      link: "https://t.me/heyimcain",
+      handle: "@heyimcain"
+    },
   ];
 
   return (
@@ -56,7 +78,7 @@ const Contact = () => {
           
           <p className="text-center text-luxury-platinum/70 mb-16 max-w-2xl mx-auto text-lg">
             {/* [MANUAL FIX]: Update your contact section intro text */}
-            Open to collaborations, opportunities, and interesting conversations.
+            
             Reach out through any channel below.
           </p>
         </motion.div>
