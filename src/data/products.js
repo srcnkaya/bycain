@@ -4,11 +4,11 @@
 export const products = [
   {
     id: 1,
-    title: "Agency Template V1",
-    description: "A premium agency landing page template with smooth animations and modern design. Perfect for creative studios.",
-    price: 29,
+    title: "Artisty V1",
+    description: "A premium artist landing page template with smooth animations and modern design. Perfect for creative studios.",
+    price: 19,
     category: "Templates",
-    tags: ["React", "Tailwind", "Framer Motion"],
+    tags: ["React", "Tailwind"],
     image: "/products/agency-template.jpg", // [MANUAL FIX]: Add your product image path
     // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
@@ -18,11 +18,11 @@ export const products = [
   },
   {
     id: 2,
-    title: "SaaS Starter Kit",
-    description: "Complete SaaS boilerplate with authentication, billing, and dashboard. Save weeks of development time.",
-    price: 79,
+    title: "BarberKing Landing Page",
+    description: "A premium Barber landing page template with modern design.",
+    price: 19,
     category: "Templates",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    tags: ["HTML", "CSS", "JavaScript"],
     image: "/products/saas-starter.jpg", // [MANUAL FIX]: Add your product image path
     // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
@@ -32,11 +32,11 @@ export const products = [
   },
   {
     id: 3,
-    title: "Portfolio Dark Mode",
-    description: "Elegant dark mode portfolio template with minimalist design and micro-interactions. Stand out from the crowd.",
+    title: "BioLink",
+    description: "A stunning, mobile-first \"link in bio\" page with a premium glassmorphism design. The perfect Linktree alternative for creators, influencers, and professionals who want to stand out.",
     price: 19,
     category: "Templates",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript",'React','tailwind'],
     image: "/products/portfolio-dark.jpg", // [MANUAL FIX]: Add your product image path
     // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
@@ -46,11 +46,11 @@ export const products = [
   },
   {
     id: 4,
-    title: "Component Library Pro",
-    description: "100+ production-ready React components with Tailwind CSS. Copy, paste, and ship faster.",
-    price: 49,
-    category: "UI Kits",
-    tags: ["React", "Tailwind", "TypeScript"],
+    title: "Delicious",
+    description: "A delicious, modern, and fully responsive website template designed for burger joints, steakhouses, and casual dining restaurants.",
+    price: 19,
+    category: "Templates",
+    tags: ['HTML', 'CSS', 'JavaScript'],
     image: "/products/ui-kit.jpg", // [MANUAL FIX]: Add your product image path
     // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
@@ -60,11 +60,11 @@ export const products = [
   },
   {
     id: 5,
-    title: "E-Commerce UI Kit",
-    description: "Complete e-commerce interface kit with product pages, checkout flow, and admin dashboard components.",
-    price: 59,
-    category: "UI Kits",
-    tags: ["Figma", "React", "Tailwind"],
+    title: "IronCore Athletics ",
+    description: "A high-conversion, dark-themed landing page for a premium personal training studio.",
+    price: 19,
+    category: "Templates",
+    tags: ["HTML", "CSS", "JavaScript",'tailwind'],
     image: "/products/ecommerce-ui.jpg", // [MANUAL FIX]: Add your product image path
     // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",
@@ -74,11 +74,11 @@ export const products = [
   },
   {
     id: 6,
-    title: "Landing Page Bundle",
-    description: "Pack of 5 high-converting landing page templates for different industries. Instant download.",
-    price: 99,
+    title: "NeonWave Audio",
+    description: "A professional, cyberpunk-themed website template designed specifically for **Music Producers**, **Beatmakers**, and **DJs** looking to sell instrumentals online.",
+    price: 19,
     category: "Templates",
-    tags: ["HTML", "Tailwind", "Alpine.js"],
+    tags: ["HTML", "Tailwind", "JavaScript"],
     image: "/products/landing-bundle.jpg", // [MANUAL FIX]: Add your product image path
     // [MANUAL FIX]: Paste your Lemon Squeezy Checkout URL here
     lemonSqueezyUrl: "https://yourstorename.lemonsqueezy.com/checkout/buy/xxxxxxxx",

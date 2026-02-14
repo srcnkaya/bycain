@@ -12,32 +12,32 @@ const Contact = () => {
     {
       name: "Email",
       icon: <Mail className="w-6 h-6" />,
-      link: "mailto:your.email@example.com", // Update with your email
-      handle: "your.email@example.com"
+      link: "mailto:info@bycain.com.com", // Update with your email
+      handle: "info@bycain.com.com"
     },
-    {
+    /*{
       name: "GitHub",
       icon: <Github className="w-6 h-6" />,
       link: "https://github.com/yourusername", // Update with your GitHub
       handle: "@yourusername"
-    },
+    },*/
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-6 h-6" />,
-      link: "https://linkedin.com/in/yourprofile", // Update with your LinkedIn
-      handle: "/yourprofile"
+      link: "https://www.linkedin.com/in/bycain/", // Update with your LinkedIn
+      handle: "ByCain"
     },
-    {
+    /*{
       name: "Twitter",
       icon: <Twitter className="w-6 h-6" />,
       link: "https://twitter.com/yourusername", // Update with your Twitter
       handle: "@yourusername"
-    },
+    },*/
     {
       name: "Instagram",
       icon: <Instagram className="w-6 h-6" />,
-      link: "https://instagram.com/yourusername", // Update with your Instagram
-      handle: "@yourusername"
+      link: "https://instagram.com/heyimcain", // Update with your Instagram
+      handle: "@heyimcain"
     },
   ];
 
