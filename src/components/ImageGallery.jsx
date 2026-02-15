@@ -47,6 +47,8 @@ const ImageGallery = ({ images, productTitle, featured }) => {
             alt={`${productTitle} - Image ${currentIndex + 1}`}
             className="w-full h-full object-cover cursor-zoom-in"
             onClick={() => openLightbox(currentIndex)}
+            loading="lazy"
+            decoding="async"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -152,6 +154,8 @@ const ImageGallery = ({ images, productTitle, featured }) => {
                   src={images[lightboxIndex]}
                   alt={`${productTitle} - Image ${lightboxIndex + 1}`}
                   className="w-full h-full object-contain rounded-2xl"
+                  loading="lazy"
+                  decoding="async"
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
@@ -200,6 +204,8 @@ const ImageGallery = ({ images, productTitle, featured }) => {
                       src={img}
                       alt={`Thumbnail ${index + 1}`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </button>
                 ))}
