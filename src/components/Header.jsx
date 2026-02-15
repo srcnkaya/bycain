@@ -39,7 +39,7 @@ const Header = () => {
     const scrollToElement = () => {
       const element = document.querySelector(href);
       if (element) {
-        const headerOffset = 80; // Header height
+        const headerOffset = 120; // Header height + extra spacing
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         
