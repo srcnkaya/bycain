@@ -1,0 +1,11 @@
+# ByCain - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bycain.com/sitemap.xml
+
+# Disallow admin or private paths (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/

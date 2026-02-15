@@ -40,16 +40,19 @@ luxury-white      #FAFAFA   // White sections
 ```
 src/
 ├── components/
-│   ├── Header.jsx         // Sticky nav, steel blue on scroll
+│   ├── Header.jsx         // Sticky nav with smart routing (works from any page)
 │   ├── Hero.jsx           // "ByCain" + "Developer & Entrepreneur"
-│   ├── Shop.jsx           // Product grid, category filter, Buy/Preview buttons
+│   ├── Shop.jsx           // Product grid with search, filters, pagination
 │   ├── PreviewModal.jsx   // Full-screen iframe modal for live demos
 │   ├── TechStack.jsx      // Grid of tech tools (React, Vite, etc.)
 │   ├── About.jsx          // Minimalist text-only bio (NO photo)
 │   └── Contact.jsx        // Social links, footer
+├── pages/
+│   ├── Privacy.jsx        // Privacy policy (auto-scroll to top)
+│   └── Terms.jsx          // Terms of service (auto-scroll to top)
 ├── data/
 │   └── products.js        // Product database (easy to edit)
-├── App.jsx                // Layout: Hero → Shop → TechStack → About → Contact
+├── App.jsx                // Router + ScrollToTop component
 ├── index.css              // Tailwind v4 config (@import "tailwindcss")
 └── main.jsx               // Entry point
 
@@ -57,6 +60,13 @@ tailwind.config.js         // Color palette, rounded corners
 postcss.config.js          // @tailwindcss/postcss plugin
 index.html                 // Meta tags, "ByCain | Developer & Entrepreneur"
 ```
+
+### Navigation & Routing:
+- **Header Navigation:** Works from any page (Privacy, Terms, Home)
+- **ByCain Logo:** Always returns to home page (smooth scroll if already home)
+- **Section Links:** Automatically navigate to home first if on another page
+- **Scroll Restoration:** All pages start from top (ScrollToTop component in App.jsx)
+- **Smooth Scrolling:** All internal navigation uses smooth scroll behavior
 
 ---
 
@@ -77,8 +87,17 @@ index.html                 // Meta tags, "ByCain | Developer & Entrepreneur"
   - **"Buy Now"** (solid steel blue) → Opens Lemon Squeezy checkout
   - **"Preview"** (outline steel blue + eye icon) → Opens PreviewModal
 - **Category Filter:** All, Templates, UI Kits (auto-generated from products)
+- **Search Box:** Real-time search through titles, descriptions, and tags
+- **Pagination:** 9 products per page with Previous/Next navigation
 - **Rounded cards:** `rounded-2xl`
 - **Smooth animations:** Framer Motion with AnimatePresence
+
+### Search & Pagination:
+- **Search:** Filters products by title, description, or tags (case-insensitive)
+- **9 Products Per Page:** Automatic pagination when more than 9 products exist
+- **Page Controls:** Number buttons + Previous/Next arrows with steel blue styling
+- **Smart Reset:** Auto-reset to page 1 when changing filters or searching
+- **Scroll Behavior:** Smooth scroll to shop section when changing pages
 
 ### PreviewModal:
 - Full-screen overlay (z-50)
@@ -97,7 +116,7 @@ Each product has:
   title: string,
   description: string,
   price: number,
-  category: "Templates" | "UI Kits",
+  category: "Templates" | "UI Kits" | "Best Sellers",
   tags: ["React", "Tailwind", ...],
   image: "/products/image.jpg",
   lemonSqueezyUrl: "https://...",  // Checkout URL
@@ -107,6 +126,13 @@ Each product has:
 ```
 
 **To add/edit products:** Only edit `products.js` - no code changes needed.
+
+### Best Sellers Category (Inactive):
+- Category exists in code but **hidden** from filter buttons
+- Ready to be activated later
+- Plan: Add random products to grab visitor attention
+- **To activate:** Update `categories` array in `products.js` to include "Best Sellers"
+- Helper function `getBestSellers()` already available
 
 ---
 
@@ -136,6 +162,18 @@ npm run preview      # Preview production build
 2. Copy existing product object
 3. Update all fields (id, title, price, URLs, etc.)
 4. Save - changes appear instantly
+5. **Automatic:** Pagination updates if more than 9 products
+
+### Activate Best Sellers Category:
+1. Open `src/data/products.js`
+2. Change some products' category to `"Best Sellers"`
+3. Update the `categories` array to include "Best Sellers"
+4. The filter button will appear automatically
+
+### Change Products Per Page:
+1. Open `src/components/Shop.jsx`
+2. Edit `PRODUCTS_PER_PAGE` constant (currently 9)
+3. Save - pagination recalculates automatically
 
 ### Change Accent Color:
 1. Open `tailwind.config.js`
@@ -147,6 +185,8 @@ npm run preview      # Preview production build
 - **About bio:** `src/components/About.jsx`
 - **Tech stack:** `src/components/TechStack.jsx`
 - **Social links:** `src/components/Contact.jsx`
+- **Privacy policy:** `src/pages/Privacy.jsx`
+- **Terms of service:** `src/pages/Terms.jsx`
 
 ---
 
@@ -175,17 +215,41 @@ npm run preview      # Preview production build
 
 ---
 
+## 📋 Recent Updates (2026-02-14)
+
+### Navigation Fixes:
+- ✅ Privacy/Terms pages now start from top (auto-scroll on load)
+- ✅ Header "ByCain" logo properly returns to home page
+- ✅ Navigation links work from Privacy/Terms pages (navigate home → scroll to section)
+- ✅ Added ScrollToTop component for proper page navigation
+
+### Shop Enhancements:
+- ✅ **Search Box:** Real-time product search (titles, descriptions, tags)
+- ✅ **Pagination:** 9 products per page with page number controls
+- ✅ **Smart Filters:** Search + category filters work together
+- ✅ **Auto-reset:** Page resets to 1 when filtering or searching
+- ✅ **Page Navigation:** Previous/Next buttons with steel blue styling
+
+### Best Sellers Category:
+- ✅ Category created but inactive (hidden from filter menu)
+- ✅ Helper function `getBestSellers()` ready
+- ✅ Documented for future activation with random products
+
+---
+
 ## 🎯 Current State
 
 - ✅ Steel blue + rounded design implemented
 - ✅ Live Preview modal working
 - ✅ Layout: Hero → Shop → TechStack → About → Contact
 - ✅ "ByCain" branding everywhere
+- ✅ Search & pagination in shop
+- ✅ Smart navigation from all pages
 - ✅ Deployment guide in README.md
 - ✅ Ready for production
 
-**Last Updated:** 2026-02-13  
-**Version:** 1.0 (Production-ready)
+**Last Updated:** 2026-02-14  
+**Version:** 1.1 (Enhanced Shop + Navigation)
 
 ---
 

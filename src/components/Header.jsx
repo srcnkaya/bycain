@@ -69,11 +69,15 @@ const Header = () => {
         <a 
           href="/" 
           onClick={handleLogoClick}
-          className={`text-2xl font-bold tracking-tight transition-colors ${
-            isScrolled ? 'text-luxury-black' : 'text-luxury-white'
-          }`}
+          className="transition-opacity hover:opacity-80"
         >
-          ByCain
+          <img 
+            src="/logo/logo.png" 
+            alt="ByCain Logo" 
+            className={`h-30 w-auto transition-all duration-300 ${
+              isScrolled ? 'invert' : ''
+            }`}
+          />
         </a>
 
         {/* Desktop Navigation */}

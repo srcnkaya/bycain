@@ -1,6 +1,11 @@
 // Product Data File
 // Add, remove, or edit products here without touching the Shop component
 // IMAGES: Now supports multiple images per product - use images array instead of single image
+// 
+// BEST SELLERS CATEGORY:
+// To add products to "Best Sellers", change their category to "Best Sellers"
+// This category is currently hidden from the filter menu
+// When ready to activate, update the categories array to include "Best Sellers"
 
 export const products = [
   {
@@ -119,8 +124,8 @@ export const products = [
   },
 ];
 
-// Get all unique categories
-export const categories = ["All", ...new Set(products.map(p => p.category))];
+// Get all unique categories (excluding "Best Sellers" for now)
+export const categories = ["All", ...new Set(products.map(p => p.category).filter(c => c !== "Best Sellers"))];
 
 // Get featured products
 export const getFeaturedProducts = () => products.filter(p => p.featured);
@@ -130,3 +135,6 @@ export const getProductsByCategory = (category) => {
   if (category === "All") return products;
   return products.filter(p => p.category === category);
 };
+
+// Best Sellers category (inactive for now, will be populated later)
+export const getBestSellers = () => products.filter(p => p.category === "Best Sellers");
