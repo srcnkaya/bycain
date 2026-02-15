@@ -29,6 +29,12 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  // Always scroll to top on page load/refresh
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
+
   return null;
 }
 
