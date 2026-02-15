@@ -8,7 +8,7 @@ const Terms = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-luxury-black text-luxury-white py-20 px-4 md:px-8 lg:px-20">
+    <div className="min-h-screen bg-luxury-black text-luxury-white pt-36 pb-20 px-4 md:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
         <Link 
           to="/" 
