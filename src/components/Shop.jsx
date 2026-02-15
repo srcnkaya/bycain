@@ -98,7 +98,7 @@ const Shop = () => {
               {category}
             </button>
           ))}
-        </motion.div>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {currentProducts.map((product, index) => (
