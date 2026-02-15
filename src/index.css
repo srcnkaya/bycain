@@ -94,6 +94,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Simple CSS animations - performant */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
 /* Reduced motion for better mobile performance */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -106,11 +120,18 @@ html {
   }
 }
 
-/* Mobile optimization - reduce animations */
+/* Mobile optimization - instant animations */
 @media (max-width: 768px) {
   * {
-    animation-duration: 0.3s !important;
-    transition-duration: 0.3s !important;
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Disable transform animations on mobile */
+  .luxury-card,
+  .luxury-button {
+    transform: none !important;
+    will-change: auto !important;
   }
 }
 
@@ -130,11 +151,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
-}
-
-/* Performance: GPU acceleration for transforms */
-.luxury-card,
-.luxury-button {
-  transform: translateZ(0);
-  will-change: transform;
 }

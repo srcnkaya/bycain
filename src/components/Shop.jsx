@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, Tag, ExternalLink, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import { products, categories } from '../data/products';
 import ImageGallery from './ImageGallery';
@@ -10,8 +9,6 @@ const Shop = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   // Filter by category first
   let filteredProducts = activeCategory === 'All' 
@@ -53,23 +50,6 @@ const Shop = () => {
     document.getElementById('shop').scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({ 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.4,
-        delay: i * 0.05 
-      }
-    }),
-    exit: {
-      opacity: 0,
-      y: -20,
-      transition: { duration: 0.2 }
-    }
-  };
-
   const handleBuyNow = (lemonSqueezyUrl) => {
     window.open(lemonSqueezyUrl, '_blank', 'noopener,noreferrer');
   };
@@ -77,13 +57,7 @@ const Shop = () => {
   return (
     <section id="shop" className="py-20 px-4 md:px-8 lg:px-20 bg-luxury-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <ShoppingBag className="w-6 h-6 sm:w-8 sm:h-8 text-luxury-charcoal" />
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
@@ -94,15 +68,10 @@ const Shop = () => {
             Premium templates and UI kits crafted with attention to detail. 
             Download instantly and start building.
           </p>
-        </motion.div>
+        </div>
 
         {/* Search Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="max-w-2xl mx-auto mb-8 px-4"
-        >
+        <div className="max-w-2xl mx-auto mb-8 px-4">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-luxury-gray" />
             <input
@@ -113,14 +82,9 @@ const Shop = () => {
               className="w-full pl-12 pr-4 py-3 border border-luxury-slateLight rounded-xl bg-white text-luxury-black placeholder-luxury-gray/50 focus:outline-none focus:border-luxury-slate focus:ring-2 focus:ring-luxury-slate/20 transition-all duration-300"
             />
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4"
-        >
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4">
           {categories.map((category) => (
             <button
               key={category}
@@ -137,16 +101,10 @@ const Shop = () => {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <AnimatePresence mode="wait">
             {currentProducts.map((product, index) => (
-              <motion.div
+              <div
                 key={product.id}
-                custom={index}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                variants={itemVariants}
-                className="bg-white border border-luxury-slateLight overflow-hidden group hover:shadow-xl hover:shadow-luxury-slate/10 hover:border-luxury-slate transition-all duration-500 rounded-2xl flex flex-col"
+                className="bg-white border border-luxury-slateLight overflow-hidden group hover:shadow-xl hover:shadow-luxury-slate/10 hover:border-luxury-slate transition-all duration-300 rounded-2xl flex flex-col"
               >
               <ImageGallery 
                 images={product.images} 
@@ -198,40 +156,25 @@ const Shop = () => {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-          </AnimatePresence>
         </div>
 
-        <AnimatePresence>
-          {filteredProducts.length === 0 && (
-            <motion.div
-              key="no-products"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="text-center py-20 col-span-full"
-            >
-              <Search className="w-16 h-16 mx-auto mb-4 text-luxury-gray opacity-30" />
-              <p className="text-luxury-charcoal/50 text-lg">
-                {searchQuery.trim() 
-                  ? `No products found for "${searchQuery}"`
-                  : 'No products found in this category.'
-                }
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-20 col-span-full">
+            <Search className="w-16 h-16 mx-auto mb-4 text-luxury-gray opacity-30" />
+            <p className="text-luxury-charcoal/50 text-lg">
+              {searchQuery.trim() 
+                ? `No products found for "${searchQuery}"`
+                : 'No products found in this category.'
+              }
+            </p>
+          </div>
+        )}
 
         {/* Pagination Controls */}
         {totalPages > 1 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex items-center justify-center gap-2 mt-12"
-          >
+          <div className="flex items-center justify-center gap-2 mt-12">
             {/* Previous Button */}
             <button
               onClick={() => handlePageChange(currentPage - 1)}
@@ -277,22 +220,17 @@ const Shop = () => {
             >
               <ChevronRight className="w-5 h-5" />
             </button>
-          </motion.div>
+          </div>
         )}
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="text-center mt-20 pt-12 border-t border-luxury-slateLight px-4"
-        >
+        <div className="text-center mt-20 pt-12 border-t border-luxury-slateLight px-4">
           <p className="text-luxury-charcoal/70 mb-4">
             Need a custom solution?
           </p>
           <a href="#contact" className="luxury-button">
             Get in Touch
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

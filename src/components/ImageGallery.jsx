@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,23 +39,17 @@ const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
     <>
       {/* Product Card Image Gallery */}
       <div className="aspect-[4/3] bg-luxury-slateLight relative overflow-hidden group/gallery">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={currentIndex}
-            src={images[currentIndex]}
-            alt={`${productTitle} - Image ${currentIndex + 1}`}
-            className="w-full h-full object-cover cursor-zoom-in"
-            onClick={() => openLightbox(currentIndex)}
-            loading={priority ? "eager" : "lazy"}
-            fetchPriority={priority ? "high" : "auto"}
-            decoding="async"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          />
-        </AnimatePresence>
+        <img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`${productTitle} - Image ${currentIndex + 1}`}
+          className="w-full h-full object-cover cursor-zoom-in transition-opacity duration-300"
+          onClick={() => openLightbox(currentIndex)}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          decoding="async"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
 
         {/* Zoom Icon Overlay */}
         <div className="absolute inset-0 bg-luxury-black/0 group-hover/gallery:bg-luxury-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover/gallery:opacity-100 cursor-zoom-in"
@@ -117,15 +110,11 @@ const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
       </div>
 
       {/* Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-luxury-black/95 z-50 flex items-center justify-center p-4"
-            onClick={closeLightbox}
-          >
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 bg-luxury-black/95 z-50 flex items-center justify-center p-4 animate-fadeIn"
+          onClick={closeLightbox}
+        >
             {/* Close Button */}
             <button
               onClick={closeLightbox}
@@ -143,27 +132,18 @@ const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
             )}
 
             {/* Main Image */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+            <div
               className="relative max-w-7xl max-h-[90vh] w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={lightboxIndex}
-                  src={images[lightboxIndex]}
-                  alt={`${productTitle} - Image ${lightboxIndex + 1}`}
-                  className="w-full h-full object-contain rounded-2xl"
-                  loading="lazy"
-                  decoding="async"
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </AnimatePresence>
+              <img
+                key={lightboxIndex}
+                src={images[lightboxIndex]}
+                alt={`${productTitle} - Image ${lightboxIndex + 1}`}
+                className="w-full h-full object-contain rounded-2xl transition-opacity duration-300"
+                loading="lazy"
+                decoding="async"
+              />
 
               {/* Navigation Arrows */}
               {images.length > 1 && (
@@ -184,7 +164,7 @@ const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
                   </button>
                 </>
               )}
-            </motion.div>
+            </div>
 
             {/* Thumbnail Strip (bottom) */}
             {images.length > 1 && (
@@ -213,9 +193,8 @@ const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
                 ))}
               </div>
             )}
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </>
   );
 };
