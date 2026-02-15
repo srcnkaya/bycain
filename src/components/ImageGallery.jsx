@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const ImageGallery = ({ images, productTitle, featured }) => {
+const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -47,8 +47,10 @@ const ImageGallery = ({ images, productTitle, featured }) => {
             alt={`${productTitle} - Image ${currentIndex + 1}`}
             className="w-full h-full object-cover cursor-zoom-in"
             onClick={() => openLightbox(currentIndex)}
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchpriority={priority ? "high" : "auto"}
             decoding="async"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

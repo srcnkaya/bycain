@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @theme {
   --color-luxury-black: #0A0A0A;
@@ -95,6 +94,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reduced motion for better mobile performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile optimization - reduce animations */
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -111,4 +130,11 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
+}
+
+/* Performance: GPU acceleration for transforms */
+.luxury-card,
+.luxury-button {
+  transform: translateZ(0);
+  will-change: transform;
 }

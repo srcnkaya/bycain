@@ -152,6 +152,7 @@ const Shop = () => {
                 images={product.images} 
                 productTitle={product.title}
                 featured={product.featured}
+                priority={startIndex + index < 3}
               />
 
               <div className="p-6 flex flex-col flex-1">
