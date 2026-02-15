@@ -43,12 +43,12 @@ const Contact = () => {
       link: "https://www.linkedin.com/in/bycain/", // Update with your LinkedIn
       handle: "ByCain"
     },
-    /*{
+    {
       name: "Twitter",
       icon: <Twitter className="w-6 h-6" />,
-      link: "https://twitter.com/yourusername", // Update with your Twitter
-      handle: "@yourusername"
-    },*/
+      link: "https://twitter.com/heyimcain", // Update with your Twitter
+      handle: "@heyimcain"
+    },
     {
       name: "Instagram",
       icon: <Instagram className="w-6 h-6" />,

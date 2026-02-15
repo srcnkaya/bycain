@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +24,35 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -35,7 +67,8 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex items-center justify-between">
         {/* Logo / Brand */}
         <a 
-          href="#" 
+          href="/" 
+          onClick={handleLogoClick}
           className={`text-2xl font-bold tracking-tight transition-colors ${
             isScrolled ? 'text-luxury-black' : 'text-luxury-white'
           }`}
@@ -49,6 +82,7 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className={`font-medium tracking-wide hover:opacity-70 transition-opacity ${
                 isScrolled ? 'text-luxury-black' : 'text-luxury-white'
               }`}
@@ -82,7 +116,7 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="block text-luxury-black font-medium py-2 hover:text-luxury-charcoal transition-colors"
               >
                 {link.name}

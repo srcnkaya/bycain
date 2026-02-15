@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 
 const Terms = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-luxury-black text-luxury-white py-20 px-4 md:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
