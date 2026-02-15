@@ -76,7 +76,7 @@ const Header = () => {
             alt="ByCain Logo" 
             width="120"
             height="30"
-            fetchpriority="high"
+            fetchPriority="high"
             className={`h-30 w-auto transition-all duration-300 ${
               isScrolled ? 'invert' : ''
             }`}

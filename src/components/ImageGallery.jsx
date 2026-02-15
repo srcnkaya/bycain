@@ -48,7 +48,7 @@ const ImageGallery = ({ images, productTitle, featured, priority = false }) => {
             className="w-full h-full object-cover cursor-zoom-in"
             onClick={() => openLightbox(currentIndex)}
             loading={priority ? "eager" : "lazy"}
-            fetchpriority={priority ? "high" : "auto"}
+            fetchPriority={priority ? "high" : "auto"}
             decoding="async"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             initial={{ opacity: 0 }}
