@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 
@@ -8,15 +7,15 @@ const Terms = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-luxury-black text-luxury-white pt-36 pb-20 px-4 md:px-8 lg:px-20">
+    <div className="min-h-screen bg-luxury-black text-luxury-white pt-40 pb-20 px-4 md:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-luxury-slate hover:text-luxury-platinum transition-colors mb-8"
+        <a 
+          href="/"
+          className="inline-flex items-center gap-2 text-luxury-slate hover:text-luxury-platinum transition-colors mb-8 relative z-[60]"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Home
-        </Link>
+        </a>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
           Terms of Service
