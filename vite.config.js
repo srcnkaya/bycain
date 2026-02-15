@@ -25,19 +25,17 @@ export default defineConfig({
         },
       },
     },
-    // Minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-        drop_debugger: true,
-      },
-    },
+    // Use esbuild minification (faster and built-in)
+    minify: 'esbuild',
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
   },
   // Performance optimizations
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'lucide-react'],
+  },
+  // Remove console.logs in production
+  esbuild: {
+    drop: ['console', 'debugger'],
   },
 })
