@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ShoppingBag, Tag, ExternalLink, ChevronLeft, ChevronRight, Search } from 'lucide-react';
+import { ShoppingBag, Tag, ExternalLink, ChevronLeft, ChevronRight, Search, ChevronDown } from 'lucide-react';
 import { products, categories } from '../data/products';
 import ImageGallery from './ImageGallery';
 
@@ -9,6 +9,14 @@ const Shop = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
+
+  const toggleDescription = (productId) => {
+    setExpandedDescriptions(prev => ({
+      ...prev,
+      [productId]: !prev[productId]
+    }));
+  };
 
   // Filter by category first
   let filteredProducts = activeCategory === 'All' 
@@ -121,15 +129,30 @@ const Shop = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:text-luxury-charcoal transition-colors">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 group-hover:text-luxury-charcoal transition-colors line-clamp-2 min-h-[56px]">
                   {product.title}
                 </h3>
 
-                <p className="text-luxury-charcoal/70 leading-relaxed mb-4 text-sm">
-                  {product.description}
-                </p>
+                <div className="mb-4 min-h-[84px]">
+                  <p className={`text-luxury-charcoal/70 leading-relaxed text-sm ${
+                    expandedDescriptions[product.id] ? '' : 'line-clamp-3'
+                  }`}>
+                    {product.description}
+                  </p>
+                  {product.description.length > 120 && (
+                    <button
+                      onClick={() => toggleDescription(product.id)}
+                      className="text-luxury-slate text-xs mt-1 hover:text-luxury-charcoal transition-colors flex items-center gap-1"
+                    >
+                      {expandedDescriptions[product.id] ? 'Show less' : 'Read more'}
+                      <ChevronDown className={`w-3 h-3 transition-transform ${
+                        expandedDescriptions[product.id] ? 'rotate-180' : ''
+                      }`} />
+                    </button>
+                  )}
+                </div>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-6 min-h-[32px]">
                   {product.tags.map((tag, index) => (
                     <span 
                       key={index}
