@@ -161,6 +161,19 @@ export const products = [
     previewUrl: "https://your-demo-site.vercel.app",
     featured: false,
   },
+     {
+    id: 14,
+    title: "SaaS Essentials - Free Starter Kit  ",
+    description: "9 Essential SaaS UI Components - Free Starter Kit",
+    price: 0,
+    category: "UI Kits",
+    tags: ["HTML","Tailwind","CSS"],
+    images: ["/products/free.png","/products/free1.png","/products/free2.png",
+      "/products/free3.png","/products/free4.png","/products/free5.png","/products/free6.png","/products/free7.png","/products/free8.png"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
+    lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/486f1f63-1df0-4da3-ae7a-3e75cee57b21",
+    previewUrl: "https://your-demo-site.vercel.app",
+    featured: false,
+  },
 ];
 
 // Get all unique categories (excluding "Best Sellers" for now)
