@@ -122,6 +122,45 @@ export const products = [
     previewUrl: "https://your-ecommerce-demo.vercel.app",
     featured: false,
   },
+  {
+    id: 11,
+    title: "AuthFlow - Premium Login & Signup UI Kit",
+    description: "AuthFlow is a curated collection of 5 stunning authentication screens designed for developers who value speed and quality.",
+    price: 19,
+    category: "UI Kits",
+    tags: ["HTML"],
+    images: ["/products/auth.jpeg","/products/auth1.jpeg","/products/auth2.jpeg",
+      "/products/auth3.jpeg","/products/auth4.jpeg","/products/auth5.jpeg"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
+    lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/0f986c40-6e60-4ec4-83e3-420442503c0d",
+    previewUrl: "https://your-demo-site.vercel.app",
+    featured: false,
+  },
+  {
+    id: 12,
+    title: "StatStack - Admin Metrics UI Kit",
+    description: "5 premium dashboard metric card designs built with Tailwind CSS. Ready-to-use HTML components for SaaS admin panels, analytics dashboards, and data-heavy applications. No build step required.",
+    price: 19,
+    category: "UI Kits",
+    tags: ["HTML","Tailwind","CSS"],
+    images: ["/products/admin.png","/products/admin1.png","/products/admin2.png",
+      "/products/admin3.png","/products/admin4.png","/products/admin5.png","/products/admin6.png"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
+    lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/10adebfd-2678-43ce-b0fe-03875b92a61b",
+    previewUrl: "https://your-demo-site.vercel.app",
+    featured: false,
+  },
+    {
+    id: 13,
+    title: "PriceTier - 5 High-Converting SaaS Pricing Tables",
+    description: "Ready-to-use pricing table designs for SaaS products. Built with Tailwind CSS. No build tools needed. Copy, paste, convert.",
+    price: 19,
+    category: "UI Kits",
+    tags: ["HTML","Tailwind","CSS"],
+    images: ["/products/price.png","/products/price1.png","/products/price2.png",
+      "/products/price3.png","/products/price4.png"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
+    lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/074c980b-f91f-4c0a-8846-06b23108b972",
+    previewUrl: "https://your-demo-site.vercel.app",
+    featured: false,
+  },
 ];
 
 // Get all unique categories (excluding "Best Sellers" for now)

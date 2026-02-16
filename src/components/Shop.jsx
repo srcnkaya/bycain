@@ -1,15 +1,28 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { ShoppingBag, Tag, ExternalLink, ChevronLeft, ChevronRight, Search, ChevronDown } from 'lucide-react';
 import { products, categories } from '../data/products';
 import ImageGallery from './ImageGallery';
 
 const PRODUCTS_PER_PAGE = 9;
 
+// Fisher-Yates shuffle algorithm for randomizing array
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 const Shop = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
+
+  // Randomize products only once when component mounts for "All" category
+  const randomizedProducts = useMemo(() => shuffleArray(products), []);
 
   const toggleDescription = (productId) => {
     setExpandedDescriptions(prev => ({
@@ -18,9 +31,9 @@ const Shop = () => {
     }));
   };
 
-  // Filter by category first
+  // Filter by category first - use randomized products for "All" category
   let filteredProducts = activeCategory === 'All' 
-    ? products 
+    ? randomizedProducts 
     : products.filter(product => product.category === activeCategory);
 
   // Then filter by search query
