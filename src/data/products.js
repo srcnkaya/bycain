@@ -18,7 +18,7 @@ export const products = [
     images: ["/products/artisty1.jpeg","/products/artisty2.jpeg","/products/artisty3.jpeg",
       "/products/artisty4.jpeg","/products/artisty6.jpeg","/products/artisty5.jpeg","/products/artisty.jpeg"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/fd7c9be3-b53a-4728-8834-10386bbd50e6",
-    previewUrl: "https://your-demo-site.vercel.app",
+    previewUrl: "/demos/Artistry/index.html",
     featured: false,
   },
   {
@@ -30,7 +30,7 @@ export const products = [
     tags: ["HTML", "CSS", "JavaScript"],
     images: ["/products/barber3.jpeg","/products/barber4.jpeg","/products/barber5.jpeg","/products/barber6.jpeg","/products/barber.jpeg","/products/barber1.jpeg","/products/barber2.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/1f20e621-a4f1-45df-985c-daa70e300e82",
-    previewUrl: "https://your-saas-demo.vercel.app",
+    previewUrl: "/demos/BarberKing/index.html",
     featured: false,
   },
   {
@@ -42,7 +42,7 @@ export const products = [
     tags: ["HTML", "CSS", "JavaScript",'React','tailwind'],
     images: ["/products/bio.png","/products/bio2.png"], // Example: Multiple images
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/38bc52b6-0ca8-4ea0-b994-5997d3b15045",
-    previewUrl: "https://your-portfolio-demo.vercel.app",
+    previewUrl: "/demos/BioLink-Pro/index.html",
     featured: false,
   },
   {
@@ -55,7 +55,7 @@ export const products = [
     images: ["/products/deli.jpeg","/products/deli1.jpeg","/products/deli2.jpeg","/products/deli3.jpeg",
       "/products/deli4.jpeg","/products/deli5.jpeg","/products/deli6.jpeg","/products/deli7.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/ecc01d51-98be-46da-a4bd-2a810001b084",
-    previewUrl: "https://your-components-demo.vercel.app",
+    previewUrl: "/demos/Delicious/index.html",
     featured: false,
   },
   {
@@ -69,7 +69,7 @@ export const products = [
       "/products/gym6.jpeg","/products/gym7.jpeg","/products/gym8.jpeg","/products/gym9.jpeg","/products/gym10.jpeg","/products/gym11.jpeg"
     ], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/a68edf3c-0229-4b31-b713-631758926eb9",
-    previewUrl: "https://your-ecommerce-demo.vercel.app",
+    previewUrl: "/demos/IronCore/index.html",
     featured: false,
   },
   {
@@ -81,7 +81,7 @@ export const products = [
     tags: ["HTML", "Tailwind", "JavaScript"],
     images: ["/products/neon7.jpeg","/products/neon.jpeg","/products/neon1.jpeg","/products/neon2.jpeg","/products/neon3.jpeg","/products/neon4.jpeg","/products/neon5.jpeg","/products/neon6.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/3b87fbfe-46a8-46d8-a917-b60f2c83ec24",
-    previewUrl: "https://your-landing-demo.vercel.app",
+    previewUrl: "/demos/NeonWave/index.html",
     featured: false,
   },
    {
@@ -93,7 +93,7 @@ export const products = [
     tags: ["HTML", "Tailwind", "JavaScript"],
     images: ["/products/estate.jpeg","/products/estate1.jpeg","/products/estate2.jpeg","/products/estate3.jpeg","/products/estate4.jpeg","/products/estate5.jpeg","/products/estate6.jpeg","/products/estate7.jpeg","/products/estate8.jpeg","/products/estate9.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/0350464b-6c90-4127-82a2-b5c101ae41f2",
-    previewUrl: "https://your-landing-demo.vercel.app",
+    previewUrl: "/demos/Prestige/index.html",
     featured: false,
   }, {
     id: 8,
@@ -105,7 +105,7 @@ export const products = [
     images: ["/products/wellness.jpeg","/products/wellness1.jpeg","/products/wellness2.jpeg","/products/wellness3.jpeg","/products/wellness4.jpeg",
       "/products/wellness5.jpeg","/products/wellness6.jpeg","/products/wellness7.jpeg","/products/wellness8.jpeg","/products/wellness9.jpeg","/products/wellness10.jpeg"], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/dadf1448-36fc-4656-9004-25d3c6df3950",
-    previewUrl: "https://your-ecommerce-demo.vercel.app",
+    previewUrl: "/demos/PureLife-Wellness-Template/index.html",
     featured: false,
   },
    {
@@ -119,7 +119,7 @@ export const products = [
       "/products/solo6.jpeg","/products/solo7.jpeg","/products/solo8.jpeg","/products/solo9.jpeg","/products/solo10.jpeg"
     ], // Add multiple images here
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/c0277445-a19c-4764-9858-9e79ae6902f5",
-    previewUrl: "https://your-ecommerce-demo.vercel.app",
+    previewUrl: "/demos/SoloShop/index.html",
     featured: false,
   },
   {
@@ -132,7 +132,7 @@ export const products = [
     images: ["/products/auth.jpeg","/products/auth1.jpeg","/products/auth2.jpeg",
       "/products/auth3.jpeg","/products/auth4.jpeg","/products/auth5.jpeg"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/0f986c40-6e60-4ec4-83e3-420442503c0d",
-    previewUrl: "https://your-demo-site.vercel.app",
+    previewUrl: "", 
     featured: false,
   },
   {
@@ -145,7 +145,7 @@ export const products = [
     images: ["/products/admin.png","/products/admin1.png","/products/admin2.png",
       "/products/admin3.png","/products/admin4.png","/products/admin5.png","/products/admin6.png"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/10adebfd-2678-43ce-b0fe-03875b92a61b",
-    previewUrl: "https://your-demo-site.vercel.app",
+    previewUrl: "", 
     featured: false,
   },
     {
@@ -158,7 +158,7 @@ export const products = [
     images: ["/products/price.png","/products/price1.png","/products/price2.png",
       "/products/price3.png","/products/price4.png"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/074c980b-f91f-4c0a-8846-06b23108b972",
-    previewUrl: "https://your-demo-site.vercel.app",
+    previewUrl: "", 
     featured: false,
   },
      {
@@ -171,7 +171,7 @@ export const products = [
     images: ["/products/free.png","/products/free1.png","/products/free2.png",
       "/products/free3.png","/products/free4.png","/products/free5.png","/products/free6.png","/products/free7.png","/products/free8.png"], // Add multiple images: ["/products/img1.jpg", "/products/img2.jpg"]
     lemonSqueezyUrl: "https://bycain.lemonsqueezy.com/checkout/buy/486f1f63-1df0-4da3-ae7a-3e75cee57b21",
-    previewUrl: "https://your-demo-site.vercel.app",
+    previewUrl: "", 
     featured: false,
   },
 ];

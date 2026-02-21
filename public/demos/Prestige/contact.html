@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contact Us | Prestige Estates</title>
+    <meta name="description" content="Get in touch with our luxury real estate specialists. Request private viewings and consultations.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Container -->
+    <div id="navbar-container"></div>
+
+    <!--
+    =====================================================
+    PAGE HEADER
+    =====================================================
+    -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact Our Team</h1>
+            <p class="page-subtitle">Private consultations for discerning clients</p>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    CONTACT SECTION
+    =====================================================
+    Two-column layout:
+    - LEFT: Contact form with validation
+    - RIGHT: Contact info cards
+    =====================================================
+    -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!--
+                =====================================================
+                CONTACT FORM (LEFT COLUMN)
+                =====================================================
+                Features:
+                - Client-side validation (main.js)
+                - XSS protection & input sanitization
+                - Required fields: first name, last name, email, phone
+                - Optional fields: budget, timeline, property interest
+                - Privacy policy checkbox (required)
+                - Success message display after submission
+                
+                Security:
+                - All inputs sanitized before processing
+                - Email & phone format validation
+                - Suspicious content detection
+                - Protection against injection attacks
+                
+                Note: Form submission is simulated (no backend).
+                To connect to a backend:
+                1. Update form action attribute or
+                2. Modify submitForm logic in main.js
+                =====================================================
+                -->
+                <div class="contact-form-wrapper">
+                    <h2 class="form-title">Request a Private Viewing</h2>
+                    <p class="form-subtitle">Complete the form below and a senior agent will contact you within 24 hours.</p>
+                    
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                <span class="error-message" id="firstNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                <span class="error-message" id="lastNameError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 123-4567" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget" class="form-select">
+                                    <option value="">Select budget range</option>
+                                    <option value="5m-10m">$5M - $10M</option>
+                                    <option value="10m-20m">$10M - $20M</option>
+                                    <option value="20m-50m">$20M - $50M</option>
+                                    <option value="50m+">$50M+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="timeline">Purchase Timeline</label>
+                                <select id="timeline" name="timeline" class="form-select">
+                                    <option value="">Select timeline</option>
+                                    <option value="immediate">Immediate</option>
+                                    <option value="3months">Within 3 months</option>
+                                    <option value="6months">Within 6 months</option>
+                                    <option value="12months">Within 12 months</option>
+                                    <option value="exploring">Just exploring</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="property">Property of Interest</label>
+                            <input type="text" id="property" name="property" class="form-input" placeholder="Enter property name or address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your requirements..."></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkbox-text">I agree to the privacy policy and consent to being contacted regarding luxury properties. *</span>
+                            </label>
+                            <span class="error-message" id="privacyError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold btn-large form-submit">
+                            <span class="submit-text">Submit Request</span>
+                            <span class="submit-loading" style="display: none;">Processing...</span>
+                        </button>
+
+                        <div id="formSuccess" class="form-success" style="display: none;">
+                            <div class="success-icon">&#10003;</div>
+                            <h3>Thank You</h3>
+                            <p>Your request has been received. A senior agent will contact you shortly.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!--
+                =====================================================
+                CONTACT INFO (RIGHT COLUMN)
+                =====================================================
+                Displays:
+                - Main office address
+                - Contact details (phone, email, hours)
+                - Global office locations
+                - Security/confidentiality badge
+                =====================================================
+                -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-card">
+                        <h3>Main Office</h3>
+                        <address>
+                            <p>9876 Wilshire Boulevard</p>
+                            <p>Beverly Hills, CA 90210</p>
+                            <p>United States</p>
+                        </address>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Contact Details</h3>
+                        <p><strong>Phone:</strong> <a href="tel:+13105551234">+1 (310) 555-1234</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:estates@prestige.com">estates@prestige.com</a></p>
+                        <p><strong>Hours:</strong> Mon-Fri, 9AM - 7PM PST</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Global Offices</h3>
+                        <ul class="office-list">
+                            <li>New York</li>
+                            <li>London</li>
+                            <li>Dubai</li>
+                            <li>Singapore</li>
+                            <li>Monaco</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-card trusted-badge">
+                        <div class="badge-icon">&#128274;</div>
+                        <h3>Secure & Confidential</h3>
+                        <p>All inquiries are handled with the utmost discretion and privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    MAP SECTION
+    =====================================================
+    Placeholder for interactive map
+    To integrate Google Maps:
+    1. Get API key from Google Cloud Console
+    2. Replace img with <iframe> or use Google Maps JS API
+    3. Center on office location coordinates
+    =====================================================
+    -->
+    <section class="map-section">
+        <div class="map-placeholder">
+            <div class="map-overlay">
+                <h3>Visit Our Flagship Office</h3>
+                <p>Beverly Hills, California</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920" alt="Map Location">
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

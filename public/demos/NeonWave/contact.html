@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact NeonWave Audio for custom beats, collaborations, or exclusive licensing. Let's create something amazing together.">
+    <meta name="keywords" content="custom beats, music producer contact, beat collaboration, exclusive production">
+    <title>Contact & Collaborate | NeonWave Audio</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    
+    <!-- Navbar injected by components.js -->
+    
+    <!-- CONTACT HEADER -->
+    <section class="hero" style="min-height: 40vh; padding-top: 10rem;">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="LET'S COLLABORATE">LET'S COLLABORATE</h1>
+            <p>
+                Whether you need a custom beat, have a collaboration idea, or want to discuss exclusive licensing — 
+                let's talk. Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section class="section">
+        <div class="contact-container">
+            
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="artistName">Artist/Producer Name</label>
+                    <input type="text" id="artistName" name="artistName" placeholder="Your stage name (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiryType">Type of Inquiry *</label>
+                    <select id="inquiryType" name="inquiryType" required>
+                        <option value="">-- Select One --</option>
+                        <option value="custom">Custom Beat Production</option>
+                        <option value="exclusive">Exclusive License Purchase</option>
+                        <option value="collaboration">Collaboration Opportunity</option>
+                        <option value="licensing">General Licensing Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget Range (USD)</label>
+                    <select id="budget" name="budget">
+                        <option value="">-- Select Budget --</option>
+                        <option value="under-100">Under $100</option>
+                        <option value="100-500">$100 - $500</option>
+                        <option value="500-1000">$500 - $1,000</option>
+                        <option value="1000-plus">$1,000+</option>
+                        <option value="negotiable">Open to Discuss</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your project, vision, or what you're looking for..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">Project Timeline</label>
+                    <input type="text" id="timeline" name="timeline" placeholder="e.g., 'Need it by next week' or 'No rush'">
+                </div>
+
+                <button type="submit" class="submit-button">Send Message ⚡</button>
+
+            </form>
+
+            <!-- Contact Info -->
+            <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: rgba(0, 255, 153, 0.05); border: 1px solid rgba(0, 255, 153, 0.3); border-radius: 10px;">
+                <h3 style="color: var(--neon-green); margin-bottom: 1.5rem;">Other Ways to Reach Us</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
+                        <p style="color: #b3b3b3; font-size: 0.9rem;">Email</p>
+                        <a href="mailto:info@neonwaveaudio.com" style="color: var(--neon-green); text-decoration: none; font-weight: 500;">info@neonwaveaudio.com</a>
+                    </div>
+
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+                        <p style="color: #b3b3b3; font-size: 0.9rem;">Instagram</p>
+                        <a href="#" style="color: var(--neon-green); text-decoration: none; font-weight: 500;">@neonwaveaudio</a>
+                    </div>
+
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎵</div>
+                        <p style="color: #b3b3b3; font-size: 0.9rem;">SoundCloud</p>
+                        <a href="#" style="color: var(--neon-green); text-decoration: none; font-weight: 500;">/neonwaveaudio</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section" style="max-width: 900px; margin: 0 auto;">
+        <div class="section-title">
+            <h2>❓ Frequently Asked Questions</h2>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            
+            <div style="background: var(--card-bg); border: 1px solid rgba(0, 255, 153, 0.3); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--neon-green); margin-bottom: 1rem;">How long does custom production take?</h3>
+                <p style="color: #b3b3b3; line-height: 1.8;">
+                    Turnaround time depends on complexity, but most custom beats are delivered within 5-7 business days. Rush orders are available for an additional fee.
+                </p>
+            </div>
+
+            <div style="background: var(--card-bg); border: 1px solid rgba(0, 255, 153, 0.3); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--neon-green); margin-bottom: 1rem;">Can I get revisions on a custom beat?</h3>
+                <p style="color: #b3b3b3; line-height: 1.8;">
+                    Yes! Custom orders include up to 3 rounds of revisions to ensure you're 100% satisfied with the final product.
+                </p>
+            </div>
+
+            <div style="background: var(--card-bg); border: 1px solid rgba(0, 255, 153, 0.3); border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--neon-green); margin-bottom: 1rem;">What file formats do you provide?</h3>
+                <p style="color: #b3b3b3; line-height: 1.8;">
+                    All licenses include high-quality WAV files (24-bit, 44.1kHz). Premium and Exclusive licenses also include MP3 and trackout stems.
+                </p>
+            </div>
+
+            <div style="background: var(--card-bg); border: 1px solid rgba(0, 255, 153, 0.3); border-radius: 10px; padding: 2rem;">
+                <h3 style="color: var(--neon-green); margin-bottom: 1rem;">Do you offer payment plans?</h3>
+                <p style="color: #b3b3b3; line-height: 1.8;">
+                    Payment plans are available for orders over $500. Contact us to discuss flexible payment options for your project.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer injected by components.js -->
+    
+    <!-- Scripts -->
+    <script src="assets/js/components.js"></script>
+    
+    <script>
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Form submitted:', data);
+            
+            // This is a placeholder - integrate with your actual backend or email service
+            alert(`✅ Message Sent!\n\nThank you, ${data.name}! We've received your inquiry and will respond within 24 hours.\n\n💡 Setup Instructions:\n1. Connect this form to your backend API\n2. Or use a service like Formspree, EmailJS, or Netlify Forms\n3. See README.md for integration guides`);
+            
+            // Reset form
+            event.target.reset();
+            
+            // Example integrations (commented out - choose one):
+            
+            // FORMSPREE:
+            // Change form action to: <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            
+            // EMAILJS:
+            // emailjs.send("service_id", "template_id", data)
+            //   .then(response => { console.log('SUCCESS!', response); });
+            
+            // CUSTOM API:
+            // fetch('https://yourapi.com/contact', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(data)
+            // });
+        }
+    </script>
+    
+</body>
+</html>

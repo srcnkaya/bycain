@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloShop - Premium Smart Watch | Buy Now</title>
+    <meta name="description" content="Get the best Smart Watch with 40% OFF. Free shipping, 30-day money-back guarantee. Order now!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vibrant-blue': '#2563eb',
+                        'sales-red': '#dc2626'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gallery-image {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        .gallery-image.active {
+            border: 3px solid #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-extrabold text-black">
+                    <a href="#home">SoloShop</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#product" class="text-gray-700 hover:text-vibrant-blue font-semibold transition">Product</a>
+                    <a href="#features" class="text-gray-700 hover:text-vibrant-blue font-semibold transition">Features</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-vibrant-blue font-semibold transition">Reviews</a>
+                    <a href="#about" class="text-gray-700 hover:text-vibrant-blue font-semibold transition">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-vibrant-blue font-semibold transition">Contact</a>
+                </div>
+                <button class="bg-vibrant-blue hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-full transition">
+                    Buy Now
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Image Gallery -->
+    <section id="product" class="container mx-auto px-4 py-12 lg:py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Product Image Gallery -->
+            <div class="order-2 lg:order-1">
+                <!-- Main Display Image -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 lg:p-16 flex items-center justify-center mb-6">
+                    <img id="mainImage" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Product Main View" class="w-full max-w-md rounded-2xl shadow-2xl object-cover">
+                </div>
+                
+                <!-- Thumbnail Gallery (4 images) -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="gallery-image active bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-2 border-2 border-transparent" onclick="changeImage(this, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&h=150&fit=crop" alt="View 1" class="w-full rounded-lg object-cover">
+                    </div>
+                    <div class="gallery-image bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-2 border-2 border-transparent" onclick="changeImage(this, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150&h=150&fit=crop" alt="View 2" class="w-full rounded-lg object-cover">
+                    </div>
+                    <div class="gallery-image bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-2 border-2 border-transparent" onclick="changeImage(this, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=150&h=150&fit=crop" alt="View 3" class="w-full rounded-lg object-cover">
+                    </div>
+                    <div class="gallery-image bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-2 border-2 border-transparent" onclick="changeImage(this, 'https://images.unsplash.com/photo-1495857000853-fe46c8aefc30?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1495857000853-fe46c8aefc30?w=150&h=150&fit=crop" alt="View 4" class="w-full rounded-lg object-cover">
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">Click thumbnails to view different angles</p>
+            </div>
+
+            <!-- Hero Text & CTA -->
+            <div class="order-1 lg:order-2 text-center lg:text-left">
+                <!-- Discount Badge -->
+                <div class="inline-block bg-sales-red text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    🔥 LIMITED TIME: 40% OFF
+                </div>
+                
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-black mb-4 leading-tight">
+                    The Smart Watch That Does It All
+                </h1>
+                
+                <p class="text-gray-600 text-lg mb-6">
+                    Track your health, stay connected, and elevate your style with cutting-edge technology. Designed for modern living.
+                </p>
+
+                <!-- Star Rating -->
+                <div class="flex items-center justify-center lg:justify-start gap-2 mb-4">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <span class="text-gray-700 font-semibold">4.9/5 (2,547 reviews)</span>
+                </div>
+
+                <!-- Pricing -->
+                <div class="mb-6">
+                    <span class="text-gray-400 line-through text-2xl mr-3">$199.99</span>
+                    <span class="text-5xl font-extrabold text-black">$119.99</span>
+                    <span class="text-gray-500 text-lg ml-2">+ Free Shipping</span>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="w-full lg:w-auto bg-vibrant-blue hover:bg-blue-700 text-white font-bold text-lg px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 mb-4">
+                    🛒 Add to Cart
+                </button>
+                
+                <p class="text-sm text-gray-500 mb-8">✓ In stock, ships within 24 hours</p>
+
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-10 h-10 text-vibrant-blue mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                        </svg>
+                        <p class="text-xs font-semibold text-gray-700">Free Shipping</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="w-10 h-10 text-vibrant-blue mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                        <p class="text-xs font-semibold text-gray-700">30-Day Returns</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="w-10 h-10 text-vibrant-blue mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                        <p class="text-xs font-semibold text-gray-700">Secure Checkout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-center text-black mb-8">
+                    Product Description
+                </h2>
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Introducing the ultimate smartwatch designed for those who demand excellence. With advanced health tracking, seamless connectivity, and premium materials, this watch is more than just a timepiece—it's your personal assistant on your wrist.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Whether you're tracking your fitness goals, managing notifications, or simply checking the time in style, our smartwatch delivers unmatched performance and elegance.
+                    </p>
+                    <h3 class="text-xl font-bold text-black mb-3">Specifications:</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Display: 1.4" AMOLED, Always-On</li>
+                        <li>Battery Life: Up to 7 days</li>
+                        <li>Water Resistance: 5ATM (50 meters)</li>
+                        <li>Sensors: Heart Rate, SpO2, GPS, Accelerometer</li>
+                        <li>Connectivity: Bluetooth 5.0, Wi-Fi</li>
+                        <li>Compatibility: iOS & Android</li>
+                        <li>Materials: Stainless Steel Case, Silicone Strap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section id="features" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-5xl font-extrabold text-center text-black mb-12">
+                Why You'll Love It
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-vibrant-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-vibrant-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-black mb-2">24/7 Health Tracking</h3>
+                    <p class="text-gray-600">Monitor heart rate, sleep quality, and daily activity with precision sensors.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-vibrant-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-vibrant-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-black mb-2">Stay Connected</h3>
+                    <p class="text-gray-600">Get calls, texts, and app notifications delivered straight to your wrist.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-vibrant-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-vibrant-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-black mb-2">7-Day Battery Life</h3>
+                    <p class="text-gray-600">Long-lasting power means less charging and more doing what you love.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-vibrant-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-vibrant-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-black mb-2">Fully Customizable</h3>
+                    <p class="text-gray-600">Choose from hundreds of watch faces and interchangeable bands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-5xl font-extrabold text-center text-black mb-12">
+                What Our Customers Say
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Absolutely love this smartwatch! Battery life is incredible and the health tracking features are spot on. Best purchase this year!"</p>
+                    <p class="text-sm font-bold text-black">— Sarah M.</p>
+                    <p class="text-xs text-gray-500">Verified Buyer</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Perfect for my active lifestyle. GPS tracking is accurate and the water resistance has been tested (accidentally!) multiple times. Highly recommend!"</p>
+                    <p class="text-sm font-bold text-black">— James K.</p>
+                    <p class="text-xs text-gray-500">Verified Buyer</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Sleek design and works seamlessly with my iPhone. The customizable watch faces are a nice touch. Worth every penny!"</p>
+                    <p class="text-sm font-bold text-black">— Emily R.</p>
+                    <p class="text-xs text-gray-500">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-16 bg-vibrant-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-col items-center mb-6">
+                <div class="flex gap-1 mb-3">
+                    <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <h2 class="text-4xl font-extrabold mb-2">Rated 4.9/5 Stars</h2>
+                <p class="text-xl text-blue-100">Loved by over 10,000+ customers worldwide</p>
+            </div>
+
+            <div class="mt-10">
+                <button class="bg-white text-vibrant-blue hover:bg-gray-100 font-bold text-lg px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                    🛒 Join Thousands of Happy Customers
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-black mb-6">
+                    About SoloShop
+                </h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                    At SoloShop, we believe in quality over quantity. We carefully curate and offer only the best products that enhance your lifestyle. Our mission is to provide exceptional value, outstanding customer service, and products that truly make a difference.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                    Founded in 2024, we've served thousands of happy customers worldwide. Every product we sell is backed by our commitment to quality and your satisfaction. We stand behind what we sell with a 30-day money-back guarantee because we believe you deserve the best.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-vibrant-blue mb-2">10,000+</p>
+                        <p class="text-gray-600">Happy Customers</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-vibrant-blue mb-2">4.9/5</p>
+                        <p class="text-gray-600">Average Rating</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-extrabold text-vibrant-blue mb-2">30-Day</p>
+                        <p class="text-gray-600">Money-Back Guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-center text-black mb-12">
+                    Contact Us
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="text-2xl font-bold text-black mb-6">Send Us a Message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-blue" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-blue" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-blue" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-vibrant-blue hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="flex items-start gap-4">
+                                <svg class="w-6 h-6 text-vibrant-blue mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-black mb-1">Email</h4>
+                                    <p class="text-gray-700">support@soloshop.com</p>
+                                    <p class="text-sm text-gray-500 mt-1">We reply within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="flex items-start gap-4">
+                                <svg class="w-6 h-6 text-vibrant-blue mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-black mb-1">Phone</h4>
+                                    <p class="text-gray-700">+1 (555) 123-4567</p>
+                                    <p class="text-sm text-gray-500 mt-1">Mon-Fri, 9AM-6PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="flex items-start gap-4">
+                                <svg class="w-6 h-6 text-vibrant-blue mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-black mb-1">Address</h4>
+                                    <p class="text-gray-700">123 Commerce Street<br>New York, NY 10001<br>United States</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 bg-vibrant-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl lg:text-5xl font-extrabold mb-6">
+                Don't Miss Out on This Deal
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+                Limited stock available. Order now and get 40% off + free shipping.
+            </p>
+            <button class="bg-white text-vibrant-blue hover:bg-gray-100 font-bold text-lg px-12 py-5 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                🛒 Add to Cart - $119.99
+            </button>
+        </div>
+    </section>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-50">
+        <button class="w-full bg-vibrant-blue hover:bg-blue-700 text-white font-bold text-lg py-4 rounded-full shadow-lg">
+            🛒 Buy Now - $119.99
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 mb-20 lg:mb-0">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SoloShop</h3>
+                    <p class="text-gray-400">Premium products for modern living.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#product" class="hover:text-white transition">Product</a></li>
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition">Reviews</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4 text-sm">Get exclusive deals and updates.</p>
+                    <input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-lg text-black mb-2">
+                    <button class="w-full bg-vibrant-blue hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">Subscribe</button>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2026 SoloShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Image Gallery JavaScript
+        function changeImage(element, imageUrl) {
+            // Update main image
+            document.getElementById('mainImage').src = imageUrl;
+            
+            // Remove active class from all thumbnails
+            document.querySelectorAll('.gallery-image').forEach(img => {
+                img.classList.remove('active');
+            });
+            
+            // Add active class to clicked thumbnail
+            element.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

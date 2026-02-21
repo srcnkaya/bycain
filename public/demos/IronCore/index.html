@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         BASIC META TAGS
+         - charset: Character encoding (UTF-8 supports all languages)
+         - viewport: Makes the site responsive on mobile devices
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Page title and description shown in Google search results -->
+    <title>IronCore Athletics | Toronto's Elite Private Training Facility</title>
+    <meta name="description" content="Toronto's premier personal training studio. Redefine your limits with elite trainers, 24/7 access, and results-driven programs.">
+    
+    <!-- ============================================
+         GOOGLE FONTS
+         - Oswald: Bold, athletic font for headers
+         - Inter: Clean, readable font for body text
+         - preconnect: Speeds up font loading
+         ============================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ============================================
+         TAILWIND CSS (CDN)
+         - Utility-first CSS framework
+         - Provides classes like: flex, grid, p-4, text-center
+         - No need to write custom CSS for most styling
+         ============================================ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ============================================
+         FONTAWESOME ICONS
+         - Provides icons like: fa-dumbbell, fa-instagram
+         - Use: <i class="fas fa-icon-name"></i>
+         - fas = solid style, fab = brand icons
+         ============================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ============================================
+         CUSTOM STYLESHEET
+         - Contains animations and custom styles
+         - File: assets/css/style.css
+         ============================================ -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- ============================================
+         TAILWIND CONFIGURATION
+         - Defines custom colors and fonts
+         - iron-dark: Main background (#0f172a = dark blue-gray)
+         - cyan-accent: Brand color (#06b6d4 = electric cyan)
+         - These colors can be used as classes: bg-iron-dark, text-cyan-accent
+         ============================================ -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'iron-dark': '#0f172a',
+                        'iron-darker': '#0a0f1c',
+                        'cyan-accent': '#06b6d4',
+                        'cyan-glow': '#22d3ee',
+                    },
+                    fontFamily: {
+                        'oswald': ['Oswald', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<!-- ============================================
+     BODY START
+     - bg-iron-dark: Dark background color
+     - text-white: White text by default
+     - font-inter: Use Inter font for body text
+     - overflow-x-hidden: Prevent horizontal scroll
+     ============================================ -->
+<body class="bg-iron-dark text-white font-inter overflow-x-hidden">
+    
+    <!-- ============================================
+         NAVIGATION BAR
+         - fixed: Stays at top when scrolling
+         - z-50: Ensures navbar stays above other content
+         - id="navbar": Used by JavaScript for scroll effects
+         
+         SECTIONS:
+         1. Logo (left) - Brand name with accent color
+         2. Desktop Links (center) - Programs, Trainers, Pricing
+         3. CTA Button (right) - "Free Session" call-to-action
+         4. Mobile Menu (hidden on desktop) - Hamburger icon
+         ============================================ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-oswald text-2xl md:text-3xl font-bold tracking-wider text-white">
+                        IRON<span class="text-cyan-accent">CORE</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#programs" class="nav-link text-gray-300 hover:text-cyan-accent transition-colors duration-300 font-medium tracking-wide text-sm uppercase">Programs</a>
+                    <a href="#trainers" class="nav-link text-gray-300 hover:text-cyan-accent transition-colors duration-300 font-medium tracking-wide text-sm uppercase">Trainers</a>
+                    <a href="#pricing" class="nav-link text-gray-300 hover:text-cyan-accent transition-colors duration-300 font-medium tracking-wide text-sm uppercase">Pricing</a>
+                    <a href="#contact" class="btn-primary px-6 py-3 bg-cyan-accent text-iron-dark font-bold rounded-none uppercase tracking-wider text-sm hover:bg-cyan-glow transition-all duration-300 transform hover:scale-105">
+                        Free Session
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-cyan-accent transition-colors p-2" aria-label="Toggle menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-iron-darker border-t border-gray-800">
+            <div class="px-4 pt-4 pb-6 space-y-4">
+                <a href="#programs" class="mobile-link block text-gray-300 hover:text-cyan-accent transition-colors font-medium uppercase tracking-wide py-2">Programs</a>
+                <a href="#trainers" class="mobile-link block text-gray-300 hover:text-cyan-accent transition-colors font-medium uppercase tracking-wide py-2">Trainers</a>
+                <a href="#pricing" class="mobile-link block text-gray-300 hover:text-cyan-accent transition-colors font-medium uppercase tracking-wide py-2">Pricing</a>
+                <a href="#contact" class="mobile-link block text-cyan-accent font-bold uppercase tracking-wide py-2">Free Session</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ============================================
+         HERO SECTION
+         - Full-screen section (min-h-screen = 100% viewport height)
+         - Centered content with flexbox
+         - Contains: Subtitle, Main Headline, Description, CTA Buttons
+         
+         BACKGROUND LAYERS (bottom to top):
+         1. Base dark color (bg-iron-dark)
+         2. Gradient overlay (gradient-to-br)
+         3. Bottom fade (gradient-to-t)
+         4. Grid pattern overlay (animated cyan grid lines)
+         ============================================ -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with gradient overlay -->
+        <div class="absolute inset-0 bg-iron-dark">
+            <div class="absolute inset-0 bg-gradient-to-br from-iron-dark via-iron-darker to-black"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-iron-dark via-transparent to-transparent"></div>
+            <!-- Animated grid overlay -->
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="hero-content">
+                <p class="text-cyan-accent font-medium tracking-[0.3em] uppercase mb-4 animate-fade-in-up">Toronto's Elite Private Training Facility</p>
+                <h1 class="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight mb-6 leading-none animate-fade-in-up delay-100">
+                    Redefine Your<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-accent to-cyan-glow">Limits</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+                    Elite personal training for those who refuse to settle. Transform your body, dominate your goals, become unstoppable.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                    <a href="#programs" class="btn-primary px-8 py-4 bg-cyan-accent text-iron-dark font-bold rounded-none uppercase tracking-wider hover:bg-cyan-glow transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                        <span>Start Your Journey</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#trainers" class="px-8 py-4 border-2 border-white text-white font-bold rounded-none uppercase tracking-wider hover:bg-white hover:text-iron-dark transition-all duration-300">
+                        Meet The Team
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#programs" class="text-gray-500 hover:text-cyan-accent transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         PROGRAMS SECTION
+         - Displays 3 program cards in a responsive grid
+         - py-24: Padding top & bottom (6rem/96px)
+         - md:py-32: More padding on desktop
+         
+         CARD FEATURES:
+         - Hover effect: Border turns cyan, card lifts up
+         - Icon box: Background highlight on hover
+         - "Learn More" link with arrow animation
+         
+         PROGRAMS:
+         1. Hypertrophy (muscle building)
+         2. CrossFit (functional fitness)
+         3. Fat Loss (weight management)
+         ============================================ -->
+    <section id="programs" class="py-24 md:py-32 bg-iron-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 md:mb-20">
+                <p class="text-cyan-accent font-medium tracking-[0.2em] uppercase mb-3">Our Programs</p>
+                <h2 class="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight">
+                    Train With <span class="text-cyan-accent">Purpose</span>
+                </h2>
+            </div>
+            
+            <!-- Programs Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Hypertrophy -->
+                <div class="program-card group relative bg-iron-darker border border-gray-800 p-8 transition-all duration-500 hover:border-cyan-accent hover:transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 mb-6 flex items-center justify-center bg-cyan-accent/10 rounded-none group-hover:bg-cyan-accent/20 transition-colors duration-300">
+                            <i class="fas fa-dumbbell text-3xl text-cyan-accent"></i>
+                        </div>
+                        <h3 class="font-oswald text-2xl font-bold uppercase mb-3 tracking-wide">Hypertrophy</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Build lean muscle mass with science-backed resistance training protocols designed for maximum gains.</p>
+                        <a href="#" class="inline-flex items-center text-cyan-accent font-semibold uppercase tracking-wider text-sm group-hover:gap-3 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- CrossFit -->
+                <div class="program-card group relative bg-iron-darker border border-gray-800 p-8 transition-all duration-500 hover:border-cyan-accent hover:transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 mb-6 flex items-center justify-center bg-cyan-accent/10 rounded-none group-hover:bg-cyan-accent/20 transition-colors duration-300">
+                            <i class="fas fa-bolt text-3xl text-cyan-accent"></i>
+                        </div>
+                        <h3 class="font-oswald text-2xl font-bold uppercase mb-3 tracking-wide">CrossFit</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">High-intensity functional training that pushes your limits and builds unstoppable conditioning.</p>
+                        <a href="#" class="inline-flex items-center text-cyan-accent font-semibold uppercase tracking-wider text-sm group-hover:gap-3 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Fat Loss -->
+                <div class="program-card group relative bg-iron-darker border border-gray-800 p-8 transition-all duration-500 hover:border-cyan-accent hover:transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 mb-6 flex items-center justify-center bg-cyan-accent/10 rounded-none group-hover:bg-cyan-accent/20 transition-colors duration-300">
+                            <i class="fas fa-fire text-3xl text-cyan-accent"></i>
+                        </div>
+                        <h3 class="font-oswald text-2xl font-bold uppercase mb-3 tracking-wide">Fat Loss</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Torch calories and transform your physique with metabolic conditioning and nutrition coaching.</p>
+                        <a href="#" class="inline-flex items-center text-cyan-accent font-semibold uppercase tracking-wider text-sm group-hover:gap-3 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-24 md:py-32 bg-iron-darker relative overflow-hidden">
+        <!-- Background accent -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cyan-accent/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div>
+                    <p class="text-cyan-accent font-medium tracking-[0.2em] uppercase mb-3">Why Choose Us</p>
+                    <h2 class="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6">
+                        Built For <span class="text-cyan-accent">Champions</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        At IronCore, we don't do average. Our facility is designed for serious athletes who demand excellence in every aspect of their training.
+                    </p>
+                    
+                    <!-- Benefits Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="benefit-item flex items-start gap-4">
+                            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-cyan-accent/10 rounded-none">
+                                <i class="fas fa-clock text-cyan-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-oswald font-bold uppercase tracking-wide mb-1">24/7 Access</h4>
+                                <p class="text-gray-500 text-sm">Train on your schedule, anytime.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item flex items-start gap-4">
+                            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-cyan-accent/10 rounded-none">
+                                <i class="fas fa-certificate text-cyan-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-oswald font-bold uppercase tracking-wide mb-1">Certified Trainers</h4>
+                                <p class="text-gray-500 text-sm">Elite coaches, proven results.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item flex items-start gap-4">
+                            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-cyan-accent/10 rounded-none">
+                                <i class="fas fa-microscope text-cyan-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-oswald font-bold uppercase tracking-wide mb-1">Bio-Tracking</h4>
+                                <p class="text-gray-500 text-sm">Data-driven progress monitoring.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item flex items-start gap-4">
+                            <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-cyan-accent/10 rounded-none">
+                                <i class="fas fa-gem text-cyan-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-oswald font-bold uppercase tracking-wide mb-1">Premium Equipment</h4>
+                                <p class="text-gray-500 text-sm">Top-tier machines & free weights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div class="aspect-square bg-gradient-to-br from-gray-800 to-iron-dark border border-gray-700 flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <div class="font-oswald text-8xl md:text-9xl font-bold text-cyan-accent mb-4">10+</div>
+                            <p class="text-gray-400 uppercase tracking-widest">Years of Excellence</p>
+                        </div>
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-cyan-accent"></div>
+                    <div class="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-cyan-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trainers Section -->
+    <section id="trainers" class="py-24 md:py-32 bg-iron-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 md:mb-20">
+                <p class="text-cyan-accent font-medium tracking-[0.2em] uppercase mb-3">The Team</p>
+                <h2 class="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight">
+                    Meet Your <span class="text-cyan-accent">Trainers</span>
+                </h2>
+            </div>
+            
+            <!-- Trainers Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Trainer 1 -->
+                <div class="trainer-card group text-center">
+                    <div class="relative mb-6 mx-auto w-48 h-48">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-gray-800 group-hover:border-cyan-accent transition-colors duration-300">
+                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=400&fit=crop&crop=face" alt="Marcus Steele" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-cyan-accent text-iron-dark px-4 py-1 font-bold text-sm uppercase tracking-wider">
+                            Head Coach
+                        </div>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-bold uppercase mb-2">Marcus Steele</h3>
+                    <p class="text-gray-500 text-sm mb-4">Strength & Conditioning Specialist</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Trainer 2 -->
+                <div class="trainer-card group text-center">
+                    <div class="relative mb-6 mx-auto w-48 h-48">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-gray-800 group-hover:border-cyan-accent transition-colors duration-300">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=400&fit=crop&crop=face" alt="Sarah Chen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-cyan-accent text-iron-dark px-4 py-1 font-bold text-sm uppercase tracking-wider">
+                            Performance
+                        </div>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-bold uppercase mb-2">Sarah Chen</h3>
+                    <p class="text-gray-500 text-sm mb-4">CrossFit & HIIT Expert</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Trainer 3 -->
+                <div class="trainer-card group text-center">
+                    <div class="relative mb-6 mx-auto w-48 h-48">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-gray-800 group-hover:border-cyan-accent transition-colors duration-300">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=400&fit=crop&crop=face" alt="David Ortiz" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-cyan-accent text-iron-dark px-4 py-1 font-bold text-sm uppercase tracking-wider">
+                            Nutrition
+                        </div>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-bold uppercase mb-2">David Ortiz</h3>
+                    <p class="text-gray-500 text-sm mb-4">Sports Nutritionist & Coach</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         PRICING SECTION
+         - 3 pricing tiers in a responsive grid
+         - Background accent: Gradient from left side
+         
+         PRICING TIERS:
+         1. Starter ($149/mo) - Entry level, basic features
+         2. Elite ($299/mo) - Featured/popular plan, scaled up
+         3. Pro ($499/mo) - Unlimited everything
+         
+         CARD FEATURES:
+         - Feature list with check/X icons
+         - "Most Popular" badge on middle plan
+         - Hover: Border highlight, lift effect
+         - Elite plan: Slightly larger (scale-105)
+         ============================================ -->
+    <section id="pricing" class="py-24 md:py-32 bg-iron-darker relative overflow-hidden">
+        <!-- Background accent -->
+        <div class="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-cyan-accent/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 md:mb-20">
+                <p class="text-cyan-accent font-medium tracking-[0.2em] uppercase mb-3">Investment</p>
+                <h2 class="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight">
+                    Choose Your <span class="text-cyan-accent">Plan</span>
+                </h2>
+            </div>
+            
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter Plan -->
+                <div class="pricing-card group relative bg-iron-dark border border-gray-800 p-8 transition-all duration-500 hover:border-cyan-accent hover:transform hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-oswald text-xl font-bold uppercase tracking-wide text-gray-400 mb-2">Starter</h3>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="font-oswald text-5xl font-bold text-white">$149</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-400 mb-6 text-sm">Perfect for those starting their fitness journey.</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>4 Personal Training Sessions</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>24/7 Gym Access</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Basic Nutrition Guide</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-500">
+                                <i class="fas fa-times"></i>
+                                <span>Body Composition Analysis</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-500">
+                                <i class="fas fa-times"></i>
+                                <span>Recovery Suite Access</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full py-4 border-2 border-gray-700 text-white font-bold uppercase tracking-wider text-center hover:border-cyan-accent hover:text-cyan-accent transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Elite Plan (Featured) -->
+                <div class="pricing-card group relative bg-iron-dark border-2 border-cyan-accent p-8 transition-all duration-500 hover:transform hover:-translate-y-2 transform scale-105">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-cyan-accent text-iron-dark px-4 py-1 font-bold text-xs uppercase tracking-wider">
+                        Most Popular
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-accent/10 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-oswald text-xl font-bold uppercase tracking-wide text-cyan-accent mb-2">Elite</h3>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="font-oswald text-5xl font-bold text-white">$299</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-400 mb-6 text-sm">For serious athletes committed to results.</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>12 Personal Training Sessions</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>24/7 Gym Access</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Custom Nutrition Plan</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Monthly Body Composition</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-500">
+                                <i class="fas fa-times"></i>
+                                <span>Recovery Suite Access</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full py-4 bg-cyan-accent text-iron-dark font-bold uppercase tracking-wider text-center hover:bg-cyan-glow transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="pricing-card group relative bg-iron-dark border border-gray-800 p-8 transition-all duration-500 hover:border-cyan-accent hover:transform hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-oswald text-xl font-bold uppercase tracking-wide text-gray-400 mb-2">Pro</h3>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="font-oswald text-5xl font-bold text-white">$499</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <p class="text-gray-400 mb-6 text-sm">The ultimate transformation experience.</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Unlimited Training Sessions</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>24/7 Gym Access</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Advanced Nutrition Coaching</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Weekly Body Composition</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check text-cyan-accent"></i>
+                                <span>Full Recovery Suite Access</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full py-4 border-2 border-gray-700 text-white font-bold uppercase tracking-wider text-center hover:border-cyan-accent hover:text-cyan-accent transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 md:py-32 bg-gradient-to-br from-cyan-accent to-cyan-glow relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-iron-dark mb-6">
+                Ready To Transform?
+            </h2>
+            <p class="text-iron-dark/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Book your complimentary assessment session today. No commitment, just results.
+            </p>
+            <a href="#" class="inline-block px-10 py-5 bg-iron-dark text-white font-bold rounded-none uppercase tracking-wider hover:bg-iron-darker transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                Claim Your Free Session
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-iron-darker py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <a href="#" class="font-oswald text-3xl font-bold tracking-wider text-white inline-block mb-4">
+                        IRON<span class="text-cyan-accent">CORE</span>
+                    </a>
+                    <p class="text-gray-500 mb-6 max-w-md">
+                        Toronto's premier destination for elite personal training. We transform bodies and minds through science-backed training and unwavering commitment.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-400 hover:bg-cyan-accent hover:text-iron-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-oswald font-bold uppercase tracking-wider mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#programs" class="text-gray-500 hover:text-cyan-accent transition-colors">Programs</a></li>
+                        <li><a href="#trainers" class="text-gray-500 hover:text-cyan-accent transition-colors">Trainers</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-cyan-accent transition-colors">Schedule</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-cyan-accent transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-oswald font-bold uppercase tracking-wider mb-4 text-white">Location</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-cyan-accent mt-1"></i>
+                            <span>123 King Street West<br>Toronto, ON M5X 1A1</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-cyan-accent"></i>
+                            <span>(416) 555-IRON</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-cyan-accent"></i>
+                            <span>train@ironcore.ca</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-sm">
+                    &copy; 2026 IronCore Athletics. All rights reserved.
+                </p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="text-gray-600 hover:text-cyan-accent transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-cyan-accent transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

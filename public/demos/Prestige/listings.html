@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Property Listings | Prestige Estates</title>
+    <meta name="description" content="Browse our exclusive collection of luxury properties worldwide. Filter by location, price, and amenities.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Container -->
+    <div id="navbar-container"></div>
+
+    <!--
+    =====================================================
+    PAGE HEADER
+    =====================================================
+    Navy gradient header for internal pages
+    =====================================================
+    -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Exclusive Listings</h1>
+            <p class="page-subtitle">Browse our curated collection of world-class estates</p>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    FILTER BAR
+    =====================================================
+    Allows users to filter properties by:
+    - Location (city/region)
+    - Price range
+    - Number of bedrooms
+    Note: Filter functionality placeholder (requires backend)
+    =====================================================
+    -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Location</label>
+                    <select class="filter-select">
+                        <option value="">All Locations</option>
+                        <option value="california">California</option>
+                        <option value="colorado">Colorado</option>
+                        <option value="florida">Florida</option>
+                        <option value="newyork">New York</option>
+                        <option value="international">International</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select class="filter-select">
+                        <option value="">Any Price</option>
+                        <option value="5m-10m">$5M - $10M</option>
+                        <option value="10m-20m">$10M - $20M</option>
+                        <option value="20m-50m">$20M - $50M</option>
+                        <option value="50m+">$50M+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Bedrooms</label>
+                    <select class="filter-select">
+                        <option value="">Any</option>
+                        <option value="4">4+</option>
+                        <option value="5">5+</option>
+                        <option value="6">6+</option>
+                        <option value="7">7+</option>
+                    </select>
+                </div>
+                <button class="btn btn-navy filter-btn">Filter Results</button>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    LISTINGS GRID
+    =====================================================
+    9 property cards in responsive grid layout
+    - Each card shows: image, title, location, amenities, price
+    - Hover effects and "View Details" button
+    - Responsive: 3 columns → 2 → 1 on smaller screens
+    =====================================================
+    -->
+    <section class="listings-section">
+        <div class="container">
+            <div class="properties-grid full-grid">
+                <!-- Property Card 1: Beverly Hills Mansion -->
+                <div class="property-card" data-location="Beverly Hills" data-price="45000000" data-bedrooms="7">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="Luxury Villa">
+                        <span class="property-badge">Featured</span>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Beverly Hills Mansion</h3>
+                        <p class="property-location">Beverly Hills, California</p>
+                        <div class="property-amenities">
+                            <span><strong>7</strong> Beds</span>
+                            <span><strong>9</strong> Baths</span>
+                            <span><strong>15,200</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$45,000,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card" data-location="Malibu" data-price="18500000" data-bedrooms="6">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Luxury Villa">
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Oceanview Manor</h3>
+                        <p class="property-location">Malibu, California</p>
+                        <div class="property-amenities">
+                            <span><strong>6</strong> Beds</span>
+                            <span><strong>8</strong> Baths</span>
+                            <span><strong>12,000</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$18,500,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" data-location="Aspen" data-price="24750000" data-bedrooms="5">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Luxury Villa">
+                        <span class="property-badge">New</span>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Highland Estate</h3>
+                        <p class="property-location">Aspen, Colorado</p>
+                        <div class="property-amenities">
+                            <span><strong>5</strong> Beds</span>
+                            <span><strong>7</strong> Baths</span>
+                            <span><strong>9,500</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$24,750,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 4 -->
+                <div class="property-card" data-location="Miami Beach" data-price="12900000" data-bedrooms="4">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800" alt="Luxury Villa">
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Palm Paradise</h3>
+                        <p class="property-location">Miami Beach, Florida</p>
+                        <div class="property-amenities">
+                            <span><strong>4</strong> Beds</span>
+                            <span><strong>5</strong> Baths</span>
+                            <span><strong>6,800</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$12,900,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 5 -->
+                <div class="property-card" data-location="Manhattan" data-price="38000000" data-bedrooms="4">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800" alt="Luxury Villa">
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Manhattan Penthouse</h3>
+                        <p class="property-location">New York, New York</p>
+                        <div class="property-amenities">
+                            <span><strong>4</strong> Beds</span>
+                            <span><strong>5</strong> Baths</span>
+                            <span><strong>5,200</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$38,000,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 6 -->
+                <div class="property-card" data-location="Cannes" data-price="60000000" data-bedrooms="8">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800" alt="Luxury Villa">
+                        <span class="property-badge">Exclusive</span>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">French Riviera Villa</h3>
+                        <p class="property-location">Cannes, France</p>
+                        <div class="property-amenities">
+                            <span><strong>8</strong> Beds</span>
+                            <span><strong>10</strong> Baths</span>
+                            <span><strong>18,500</strong> sqft</span>
+                        </div>
+                        <p class="property-price">€52,000,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 7 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800" alt="Luxury Villa">
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Lake Tahoe Retreat</h3>
+                        <p class="property-location">Lake Tahoe, Nevada</p>
+                        <div class="property-amenities">
+                            <span><strong>6</strong> Beds</span>
+                            <span><strong>7</strong> Baths</span>
+                            <span><strong>11,000</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$16,750,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 8 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800" alt="Luxury Villa">
+                        <span class="property-badge">Price Reduced</span>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Hamptons Beach House</h3>
+                        <p class="property-location">Southampton, New York</p>
+                        <div class="property-amenities">
+                            <span><strong>5</strong> Beds</span>
+                            <span><strong>6</strong> Baths</span>
+                            <span><strong>8,200</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$28,500,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Property 9 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800" alt="Luxury Villa">
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Bel Air Contemporary</h3>
+                        <p class="property-location">Bel Air, California</p>
+                        <div class="property-amenities">
+                            <span><strong>6</strong> Beds</span>
+                            <span><strong>8</strong> Baths</span>
+                            <span><strong>14,500</strong> sqft</span>
+                        </div>
+                        <p class="property-price">$62,000,000</p>
+                        <button class="btn btn-outline btn-small">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+            =====================================================
+            PAGINATION
+            =====================================================
+            Navigate between property pages
+            Note: Pagination logic placeholder (requires backend)
+            =====================================================
+            -->
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn next">Next &rsaquo;</button>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    NEWSLETTER SIGNUP
+    =====================================================
+    Captures email addresses for exclusive listings alerts
+    Note: Form submission placeholder (requires backend)
+    =====================================================
+    -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <h3>Exclusive Listings Alert</h3>
+                    <p>Be the first to know about new luxury properties</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button type="submit" class="btn btn-gold">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/property-filter.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

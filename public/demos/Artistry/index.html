@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>ARTISTRY - Artist Portfolio</title>
+    <meta name="description" content="Contemporary art pieces and painting portfolio. Discover my works with minimalist design.">
+    <meta name="keywords" content="art, painting, contemporary art, gallery, portfolio">
+    <meta name="author" content="Your Name">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">ARTISTRY</h1>
+        <p class="hero-subtitle">Contemporary Visual Expression</p>
+    </section>
+
+    <!-- Gallery Section - Masonry Layout -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="masonry-grid" id="gallery">
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80" alt="Abstract Painting 1" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&q=80" alt="Sculpture Work" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80" alt="Portrait Series" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&q=80" alt="Nature Photography" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Abstract Photography" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80" alt="Landscape Art" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1561214078-f3247647fc5e?w=800&q=80" alt="Watercolor Series" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80" alt="Digital Art" loading="lazy">
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&q=80" alt="Still Life" loading="lazy">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Full Size View">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/gallery.js"></script>
+
+</body>
+</html>

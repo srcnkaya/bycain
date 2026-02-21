@@ -1,0 +1,1 @@
+Put built demo files in subfolders: /public/demos/<slug>/index.html

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ARTISTRY</title>
+    <meta name="description" content="Get in touch for commissions or collaborations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                
+                <h1 class="section-title">Commission Request</h1>
+                
+                <p class="contact-intro">
+                    Thinking about a custom piece or collaboration? Let's create something extraordinary together.
+                </p>
+
+                <!-- Contact Form -->
+                <form class="contact-form" action="#" method="POST" id="contactForm">
+                    
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    </div>
+
+                    <!-- Project Type -->
+                    <div class="form-group">
+                        <label for="project">Project Type *</label>
+                        <select id="project" name="project" required>
+                            <option value="">Select a project type</option>
+                            <option value="painting">Custom Painting</option>
+                            <option value="sculpture">Sculpture Commission</option>
+                            <option value="photography">Photography Session</option>
+                            <option value="print">Limited Edition Print</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Budget Range -->
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select a budget</option>
+                            <option value="under-1k">Under $1,000</option>
+                            <option value="1k-5k">$1,000 - $5,000</option>
+                            <option value="5k-10k">$5,000 - $10,000</option>
+                            <option value="over-10k">Over $10,000</option>
+                        </select>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell us about your vision, preferred style, dimensions, timeline, etc..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">Send Request</button>
+
+                    <!-- Status Message -->
+                    <div class="form-status" id="formStatus"></div>
+
+                </form>
+
+                <!-- Alternative Contact Info -->
+                <div class="contact-info">
+                    <p>Or reach out directly:</p>
+                    <a href="mailto:hello@artistry.com" class="contact-link">hello@artistry.com</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/components.js"></script>
+    
+    <!-- Form Validation -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formStatus = document.getElementById('formStatus');
+            
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Thank you! Your message has been sent.';
+            formStatus.style.color = '#28a745';
+            
+            setTimeout(() => {
+                this.reset();
+                formStatus.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

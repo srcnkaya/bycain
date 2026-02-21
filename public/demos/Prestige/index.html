@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Prestige Estates | Luxury Villas</title>
+    <meta name="description" content="Discover world-class luxury real estate. Browse exclusive villas and estates worldwide with Prestige Estates.">
+    <meta name="keywords" content="luxury real estate, luxury villas, prestige estates, luxury homes">
+    
+    <!-- Fonts: Playfair Display (headings) + Lato (body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Container: Dynamically loaded by components.js -->
+    <div id="navbar-container"></div>
+
+    <!-- 
+    =====================================================
+    HERO SLIDER SECTION
+    =====================================================
+    Full-screen rotating slider with property imagery
+    - 3 slides rotate automatically every 6 seconds
+    - Manual navigation via arrows or dots
+    - Background images from Unsplash
+    =====================================================
+    -->
+    <section class="hero-slider">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920');">
+            <div class="slide-content">
+                <h1 class="slide-title">Exceptional Living</h1>
+                <p class="slide-subtitle">Discover the world's most prestigious properties</p>
+                <a href="listings.html" class="btn btn-gold">Explore Properties</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920');">
+            <div class="slide-content">
+                <h1 class="slide-title">Timeless Elegance</h1>
+                <p class="slide-subtitle">Where luxury meets unparalleled craftsmanship</p>
+                <a href="listings.html" class="btn btn-gold">View Collection</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920');">
+            <div class="slide-content">
+                <h1 class="slide-title">Your Legacy Awaits</h1>
+                <p class="slide-subtitle">Invest in extraordinary real estate</p>
+                <a href="contact.html" class="btn btn-gold">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-dot active" data-slide="0"></button>
+            <button class="slider-dot" data-slide="1"></button>
+            <button class="slider-dot" data-slide="2"></button>
+        </div>
+        
+        <button class="slider-arrow slider-prev">&#8249;</button>
+        <button class="slider-arrow slider-next">&#8250;</button>
+    </section>
+
+    <!-- 
+    =====================================================
+    FEATURED PROPERTIES SECTION
+    =====================================================
+    Showcases 3 premium property listings
+    - Each card includes image, title, location, details
+    - Hover effects for interactivity
+    - Links to listings page
+    =====================================================
+    -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Properties</h2>
+            <p class="section-subtitle">Handpicked luxury estates for the discerning buyer</p>
+            
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Luxury Villa">
+                        <span class="property-badge">Featured</span>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Oceanview Manor</h3>
+                        <p class="property-location">Malibu, California</p>
+                        <div class="property-details">
+                            <span>6 Beds</span>
+                            <span>8 Baths</span>
+                            <span>12,000 sqft</span>
+                        </div>
+                        <p class="property-price">$18,500,000</p>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="Luxury Villa">
+                        <span class="property-badge">New</span>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Highland Estate</h3>
+                        <p class="property-location">Aspen, Colorado</p>
+                        <div class="property-details">
+                            <span>5 Beds</span>
+                            <span>7 Baths</span>
+                            <span>9,500 sqft</span>
+                        </div>
+                        <p class="property-price">$24,750,000</p>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800" alt="Luxury Villa">
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-title">Palm Paradise</h3>
+                        <p class="property-location">Miami Beach, Florida</p>
+                        <div class="property-details">
+                            <span>4 Beds</span>
+                            <span>5 Baths</span>
+                            <span>6,800 sqft</span>
+                        </div>
+                        <p class="property-price">$12,900,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="listings.html" class="btn btn-outline">View All Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    ABOUT SECTION
+    =====================================================
+    Company introduction with statistics
+    - Two-column layout: text + image
+    - Statistics grid (sales volume, estates sold, experience)
+    - Builds trust and credibility
+    =====================================================
+    -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">The Prestige Difference</h2>
+                    <p class="about-text">For over three decades, Prestige Estates has represented the pinnacle of luxury real estate. We curate exceptional properties for clients who demand nothing less than perfection.</p>
+                    <p class="about-text">Our global network of estate specialists ensures access to exclusive listings unavailable anywhere else.</p>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-number">$4.2B</span>
+                            <span class="stat-label">Sales Volume</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">850+</span>
+                            <span class="stat-label">Estates Sold</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">35</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800" alt="Luxury Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    =====================================================
+    CALL TO ACTION SECTION
+    =====================================================
+    Drives user engagement with prominent CTA button
+    - Dark navy gradient background
+    - Gold button links to contact page
+    =====================================================
+    -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Find Your Dream Estate?</h2>
+            <p class="cta-text">Our luxury property specialists are available for private consultations.</p>
+            <a href="contact.html" class="btn btn-gold btn-large">Schedule a Private Viewing</a>
+        </div>
+    </section>
+
+    <!-- Footer Container: Dynamically loaded by components.js -->
+    <div id="footer-container"></div>
+
+    <!-- 
+    =====================================================
+    JAVASCRIPT MODULES
+    =====================================================
+    1. components.js: Navbar & Footer class definitions
+    2. main.js: Slider functionality, form validation, etc.
+    Load order matters: components.js must load first
+    =====================================================
+    -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

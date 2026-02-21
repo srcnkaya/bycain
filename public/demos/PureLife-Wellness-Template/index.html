@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureLife Wellness - Spa & Beauty Center</title>
+    <meta name="description" content="Experience tranquility and rejuvenation at PureLife Wellness. Premium spa services, beauty treatments, and holistic wellness in a serene environment.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4));
+        }
+        
+        /* Desktop menu dots */
+        @media (min-width: 768px) {
+            .menu-dots {
+                flex-grow: 1;
+                border-bottom: 2px dotted #84a98c;
+                margin: 0 12px 8px 12px;
+            }
+        }
+        
+        /* Mobile: hide dots, use clean stacked layout */
+        @media (max-width: 767px) {
+            .service-item {
+                display: block !important;
+                padding-bottom: 1.5rem !important;
+                border-bottom: 1px solid #e7e5e4 !important;
+            }
+            
+            .service-item .menu-dots {
+                display: none;
+            }
+            
+            .service-price {
+                display: block;
+                margin-top: 0.5rem;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed w-full top-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="text-xl sm:text-2xl font-bold text-stone-800" style="font-family: 'Playfair Display', serif;">
+                    PureLife Wellness
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#home" class="text-stone-600 hover:text-[#84a98c] transition text-sm lg:text-base">Home</a>
+                    <a href="#services" class="text-stone-600 hover:text-[#84a98c] transition text-sm lg:text-base">Services</a>
+                    <a href="#experience" class="text-stone-600 hover:text-[#84a98c] transition text-sm lg:text-base">Experience</a>
+                    <a href="#contact" class="text-stone-600 hover:text-[#84a98c] transition text-sm lg:text-base">Contact</a>
+                    <a href="#contact" class="bg-[#84a98c] text-white px-4 lg:px-6 py-2 rounded-full hover:bg-[#6d9175] transition text-sm lg:text-base">
+                        Book Now
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-stone-800 p-2" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pt-4 pb-2">
+                <a href="#home" class="block py-2 text-stone-600 hover:text-[#84a98c] transition" onclick="toggleMobileMenu()">Home</a>
+                <a href="#services" class="block py-2 text-stone-600 hover:text-[#84a98c] transition" onclick="toggleMobileMenu()">Services</a>
+                <a href="#experience" class="block py-2 text-stone-600 hover:text-[#84a98c] transition" onclick="toggleMobileMenu()">Experience</a>
+                <a href="#contact" class="block py-2 text-stone-600 hover:text-[#84a98c] transition" onclick="toggleMobileMenu()">Contact</a>
+                <a href="#contact" class="block mt-3 bg-[#84a98c] text-white px-6 py-2 rounded-full text-center hover:bg-[#6d9175] transition" onclick="toggleMobileMenu()">
+                    Book Now
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16">
+        <!-- Background Image -->
+        <div class="absolute inset-0 hero-overlay">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920" 
+                 alt="Relaxing spa environment" 
+                 class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-4 sm:px-6 py-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+                Discover Your<br class="sm:hidden"> Sanctuary
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 font-light max-w-xl lg:max-w-2xl mx-auto px-2">
+                Where wellness meets luxury. Experience transformative treatments in a serene, healing environment.
+            </p>
+            <a href="#services" class="inline-block bg-[#84a98c] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-[#6d9175] transition shadow-lg">
+                Explore Our Services
+            </a>
+        </div>
+    </section>
+
+    <!-- SERVICES MENU SECTION -->
+    <section id="services" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-800 mb-3 sm:mb-4">
+                    Our Services
+                </h2>
+                <p class="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto px-2">
+                    Each treatment is carefully crafted to restore balance, beauty, and inner peace.
+                </p>
+            </div>
+
+            <!-- Service Menu Items -->
+            <div class="space-y-4 sm:space-y-6 bg-white p-4 sm:p-8 lg:p-12 rounded-lg shadow-sm">
+                
+                <!-- Service Item 1 -->
+                <div class="service-item flex items-end border-b border-stone-200 pb-4">
+                    <div class="flex-shrink-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-stone-800">Signature Massage</h3>
+                        <p class="text-stone-600 text-sm mt-1">90 minutes of pure relaxation with aromatherapy</p>
+                    </div>
+                    <div class="menu-dots"></div>
+                    <div class="service-price flex-shrink-0 text-[#84a98c] font-bold text-xl">$185</div>
+                </div>
+
+                <!-- Service Item 2 -->
+                <div class="service-item flex items-end border-b border-stone-200 pb-4">
+                    <div class="flex-shrink-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-stone-800">Facial Rejuvenation</h3>
+                        <p class="text-stone-600 text-sm mt-1">Custom facial with organic botanicals</p>
+                    </div>
+                    <div class="menu-dots"></div>
+                    <div class="service-price flex-shrink-0 text-[#84a98c] font-bold text-xl">$145</div>
+                </div>
+
+                <!-- Service Item 3 -->
+                <div class="service-item flex items-end border-b border-stone-200 pb-4">
+                    <div class="flex-shrink-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-stone-800">Body Detox Wrap</h3>
+                        <p class="text-stone-600 text-sm mt-1">Purifying seaweed and clay treatment</p>
+                    </div>
+                    <div class="menu-dots"></div>
+                    <div class="service-price flex-shrink-0 text-[#84a98c] font-bold text-xl">$165</div>
+                </div>
+
+                <!-- Service Item 4 -->
+                <div class="service-item flex items-end border-b border-stone-200 pb-4">
+                    <div class="flex-shrink-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-stone-800">Hot Stone Therapy</h3>
+                        <p class="text-stone-600 text-sm mt-1">Deep tissue massage with heated basalt stones</p>
+                    </div>
+                    <div class="menu-dots"></div>
+                    <div class="service-price flex-shrink-0 text-[#84a98c] font-bold text-xl">$195</div>
+                </div>
+
+                <!-- Service Item 5 -->
+                <div class="service-item flex items-end border-b border-stone-200 pb-4">
+                    <div class="flex-shrink-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-stone-800">Couples Retreat</h3>
+                        <p class="text-stone-600 text-sm mt-1">Side-by-side massage for two in private suite</p>
+                    </div>
+                    <div class="menu-dots"></div>
+                    <div class="service-price flex-shrink-0 text-[#84a98c] font-bold text-xl">$350</div>
+                </div>
+
+                <!-- Service Item 6 -->
+                <div class="service-item flex items-end pb-2 sm:pb-4">
+                    <div class="flex-shrink-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-stone-800">Holistic Yoga Session</h3>
+                        <p class="text-stone-600 text-sm mt-1">Private guided session with meditation</p>
+                    </div>
+                    <div class="menu-dots"></div>
+                    <div class="service-price flex-shrink-0 text-[#84a98c] font-bold text-xl">$85</div>
+                </div>
+
+            </div>
+
+            <!-- Note -->
+            <p class="text-center text-stone-500 mt-6 sm:mt-8 italic text-sm sm:text-base px-2">
+                *All treatments include complimentary herbal tea and aromatherapy
+            </p>
+        </div>
+    </section>
+
+    <!-- THE EXPERIENCE SECTION -->
+    <section id="experience" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-800 mb-3 sm:mb-4">
+                    The Experience
+                </h2>
+                <p class="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto px-2">
+                    Step into a world of tranquility. Our thoughtfully designed spaces create the perfect atmosphere for healing and renewal.
+                </p>
+            </div>
+
+            <!-- Image Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                
+                <!-- Image 1 -->
+                <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800" 
+                         alt="Serene treatment room" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
+                        <h3 class="text-white text-base sm:text-lg lg:text-xl font-semibold">Private Treatment Rooms</h3>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800" 
+                         alt="Relaxation lounge" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
+                        <h3 class="text-white text-base sm:text-lg lg:text-xl font-semibold">Tranquil Relaxation Areas</h3>
+                    </div>
+                </div>
+
+            
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-[#f4e1d2]/20">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-800 mb-3 sm:mb-4">
+                    What Our Clients Say
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm">
+                    <p class="text-stone-600 italic mb-4 text-sm sm:text-base">
+                        "An absolute sanctuary in the city. The staff is incredibly skilled and the atmosphere is pure bliss. I leave feeling completely renewed every time."
+                    </p>
+                    <p class="text-stone-800 font-semibold text-sm sm:text-base">— Sarah M.</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-sm">
+                    <p class="text-stone-600 italic mb-4 text-sm sm:text-base">
+                        "The best spa experience I've ever had. From the moment you walk in, you're transported to another world. Highly recommend the signature massage!"
+                    </p>
+                    <p class="text-stone-800 font-semibold text-sm sm:text-base">— Michael T.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / LOCATION SECTION -->
+    <section id="contact" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-800 mb-3 sm:mb-4">
+                    Visit Us
+                </h2>
+                <p class="text-base sm:text-lg text-stone-600 px-2">
+                    We're here to welcome you into tranquility.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+                
+                <!-- Contact Information -->
+                <div class="space-y-6 sm:space-y-8">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-semibold text-stone-800 mb-3 sm:mb-4">Location</h3>
+                        <p class="text-stone-600 text-sm sm:text-base">
+                            123 Serenity Lane<br>
+                            Wellness District<br>
+                            City, State 12345
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-semibold text-stone-800 mb-3 sm:mb-4">Hours</h3>
+                        <p class="text-stone-600 text-sm sm:text-base">
+                            Monday - Friday: 9:00 AM - 8:00 PM<br>
+                            Saturday: 10:00 AM - 6:00 PM<br>
+                            Sunday: 11:00 AM - 5:00 PM
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-semibold text-stone-800 mb-3 sm:mb-4">Contact</h3>
+                        <p class="text-stone-600 text-sm sm:text-base">
+                            Phone: <a href="tel:5551234567" class="hover:text-[#84a98c] transition">(555) 123-4567</a><br>
+                            Email: <a href="mailto:hello@purelifewellness.com" class="hover:text-[#84a98c] transition">hello@purelifewellness.com</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <a href="#contact" class="inline-block bg-[#84a98c] text-white px-6 sm:px-8 py-3 rounded-full hover:bg-[#6d9175] transition text-sm sm:text-base shadow-lg">
+                            Book Your Appointment
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="bg-stone-200 rounded-lg overflow-hidden h-64 sm:h-80 lg:h-96">
+                    <div class="w-full h-full flex items-center justify-center text-stone-500">
+                        <div class="text-center px-4">
+                            <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base">Map Placeholder</p>
+                            <p class="text-xs sm:text-sm mt-2">Replace with Google Maps iframe</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-800 text-white py-10 sm:py-12 px-4 sm:px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                
+                <!-- About -->
+                <div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4" style="font-family: 'Playfair Display', serif;">
+                        PureLife Wellness
+                    </h4>
+                    <p class="text-stone-300 text-xs sm:text-sm">
+                        Your sanctuary for holistic wellness, beauty, and rejuvenation. Experience the art of relaxation.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-stone-300 text-xs sm:text-sm">
+                        <li><a href="#services" class="hover:text-[#84a98c] transition">Services</a></li>
+                        <li><a href="#experience" class="hover:text-[#84a98c] transition">Experience</a></li>
+                        <li><a href="#contact" class="hover:text-[#84a98c] transition">Contact</a></li>
+                        <li><a href="privacy.html" class="hover:text-[#84a98c] transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-[#84a98c] transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Contact -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Connect With Us</h4>
+                    
+                    <!-- Social Icons -->
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://facebook.com" class="text-stone-300 hover:text-[#84a98c] transition" target="_blank" aria-label="Facebook">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://instagram.com" class="text-stone-300 hover:text-[#84a98c] transition" target="_blank" aria-label="Instagram">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://twitter.com" class="text-stone-300 hover:text-[#84a98c] transition" target="_blank" aria-label="Twitter">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+
+                    <p class="text-stone-300 text-xs sm:text-sm">
+                        123 Serenity Lane<br>
+                        City, State 12345
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-stone-700 pt-6 text-center text-stone-400 text-xs sm:text-sm">
+                <p>&copy; 2024 PureLife Wellness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const button = event.target.closest('button[onclick="toggleMobileMenu()"]');
+            
+            if (!button && !menu.contains(event.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

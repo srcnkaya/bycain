@@ -14,8 +14,8 @@ const Hero = () => {
           </p>
           
           <p className="text-sm sm:text-base md:text-lg text-luxury-platinum/80 max-w-2xl mx-auto mb-12 leading-relaxed px-4">
-            Building digital products that blend creativity with technology. 
-            From templates to tools, each project is crafted with precision and purpose.
+            Launch-ready website templates that help you ship in hours, not weeks. 
+            Conversion-focused templates & UI kits for founders and developers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">

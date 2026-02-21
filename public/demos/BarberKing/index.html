@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==============================================
+         SEO META TAGS
+         CUSTOMIZE: Update these for better search engine visibility
+         ============================================== -->
+    <title>BarberKing - Premium Barber Shop | Professional Grooming Services</title>
+    <meta name="description" content="Premium barbershop offering professional haircuts, beard trims, and luxury grooming services. Experience the art of traditional barbering with modern style.">
+    <meta name="keywords" content="barber, barbershop, haircut, beard trim, men's grooming, shave, hair styling">
+    <meta name="author" content="BarberKing">
+    
+    <!-- OPEN GRAPH (Facebook, LinkedIn) -->
+    <!-- CUSTOMIZE: Update these when sharing on social media -->
+    <meta property="og:title" content="BarberKing - Premium Barber Shop">
+    <meta property="og:description" content="Experience luxury grooming services for the modern gentleman">
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- TWITTER CARD -->
+    <!-- CUSTOMIZE: Update for Twitter sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BarberKing - Premium Barber Shop">
+    <meta name="twitter:description" content="Experience luxury grooming services">
+    <meta name="twitter:image" content="https://yourdomain.com/images/twitter-card.jpg">
+    
+    <!-- FAVICON -->
+    <!-- CUSTOMIZE: Replace with your own favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- ==============================================
+         GOOGLE FONTS
+         CUSTOMIZE: Change fonts if desired
+         ============================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- ==============================================
+         FONT AWESOME ICONS
+         For icons throughout the site
+         ============================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- ==============================================
+         TAILWIND CSS (CDN)
+         Utility-first CSS framework
+         ============================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ==============================================
+         TAILWIND CONFIG - CUSTOM COLORS & FONTS
+         CUSTOMIZE: Change brand colors here
+         ============================================== -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'barber-dark': '#111111',          // Main background
+                        'barber-gold': '#D4AF37',          // Primary gold accent
+                        'barber-gold-light': '#E5C158',    // Light gold for hovers
+                        'barber-text': '#f3f4f6',          // Main text color
+                        'barber-gray': '#1a1a1a',          // Card backgrounds
+                    },
+                    fontFamily: {
+                        'oswald': ['Oswald', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- ==============================================
+         CUSTOM STYLESHEET
+         Additional styles and overrides
+         ============================================== -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-barber-dark text-barber-text font-roboto">
+    
+    <!-- ==============================================
+         HEADER / NAVIGATION BAR
+         Sticky header with logo and navigation links
+         ============================================== -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-barber-dark/95 backdrop-blur-sm border-b border-barber-gold/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- LOGO -->
+                <!-- CUSTOMIZE: Change "BarberKing" to your business name -->
+                <!-- Or replace with <img> tag for logo image -->
+                <a href="#home" class="text-2xl sm:text-3xl font-oswald font-bold text-barber-gold tracking-wider business-name">
+                    BarberKing
+                </a>
+                
+                <!-- DESKTOP NAVIGATION -->
+                <!-- CUSTOMIZE: Add, remove, or modify navigation links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium">Home</a>
+                    <a href="#services" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium">Services</a>
+                    <a href="#gallery" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium">Gallery</a>
+                    <a href="#contact" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium">Contact</a>
+                    
+                    <!-- BOOK NOW BUTTON -->
+                    <!-- CUSTOMIZE: Change href to your booking system URL -->
+                    <a href="#contact" class="bg-barber-gold text-barber-dark px-6 py-2 rounded font-oswald font-semibold uppercase tracking-wide hover:bg-barber-gold-light transition-all duration-300 gold-glow">
+                        Book Now
+                    </a>
+                </nav>
+                
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" class="md:hidden text-barber-gold text-2xl focus:outline-none focus:ring-2 focus:ring-barber-gold rounded" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- MOBILE NAVIGATION MENU -->
+        <!-- Slides in from right on mobile devices -->
+        <div id="mobile-menu" class="mobile-menu hidden-menu fixed top-20 right-0 w-64 h-screen bg-barber-gray border-l border-barber-gold/20 md:hidden shadow-2xl">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium text-lg">Home</a>
+                <a href="#services" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium text-lg">Services</a>
+                <a href="#gallery" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium text-lg">Gallery</a>
+                <a href="#contact" class="text-barber-text hover:text-barber-gold transition-colors duration-300 font-medium text-lg">Contact</a>
+                <a href="#contact" class="bg-barber-gold text-barber-dark px-6 py-3 rounded font-oswald font-semibold uppercase tracking-wide text-center hover:bg-barber-gold-light transition-all duration-300 mt-4">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ==============================================
+         HERO SECTION
+         Full-screen hero with background image
+         ============================================== -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        
+        <!-- BACKGROUND IMAGE -->
+        <!-- CUSTOMIZE: Replace with your own hero image -->
+        <!-- Recommended size: 1920x1080px or larger -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Premium Barber Shop Interior" 
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <!-- HERO CONTENT -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            
+            <!-- MAIN HEADLINE -->
+            <!-- CUSTOMIZE: Change headline text to match your brand -->
+            <h1 class="font-oswald text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-wide uppercase">
+                Refine Your <span class="text-barber-gold">Style</span>
+            </h1>
+            
+            <!-- SUBHEADLINE -->
+            <!-- CUSTOMIZE: Update subheadline to describe your services -->
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 font-light max-w-2xl mx-auto">
+                Premium grooming services for the modern gentleman. Experience luxury, precision, and style.
+            </p>
+            
+            <!-- CALL-TO-ACTION BUTTONS -->
+            <!-- CUSTOMIZE: Update button text and links -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#services" class="bg-barber-gold text-barber-dark px-8 py-4 rounded font-oswald font-semibold uppercase tracking-wide hover:bg-barber-gold-light transition-all duration-300 gold-glow text-lg w-full sm:w-auto text-center">
+                    View Services
+                </a>
+                <a href="#contact" class="border-2 border-barber-gold text-barber-gold px-8 py-4 rounded font-oswald font-semibold uppercase tracking-wide hover:bg-barber-gold hover:text-barber-dark transition-all duration-300 text-lg w-full sm:w-auto text-center">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+        
+        <!-- SCROLL DOWN INDICATOR -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#services" class="text-barber-gold text-3xl" aria-label="Scroll to services">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- ==============================================
+         SERVICES SECTION
+         Showcase your services with pricing
+         ============================================== -->
+    <section id="services" class="py-20 sm:py-28 bg-barber-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- SECTION HEADER -->
+            <div class="text-center mb-16">
+                <h2 class="font-oswald text-4xl sm:text-5xl font-bold text-white mb-4 uppercase tracking-wide">
+                    Our <span class="text-barber-gold">Services</span>
+                </h2>
+                <div class="w-24 h-1 bg-barber-gold mx-auto mb-4"></div>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Premium grooming services tailored to your style
+                </p>
+            </div>
+            
+            <!-- MAIN SERVICES GRID -->
+            <!-- CUSTOMIZE: Modify service cards below -->
+            <!-- Each card includes: icon, name, description, and price -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- SERVICE CARD 1 -->
+                <!-- CUSTOMIZE: Change icon, name, description, and price -->
+                <div class="service-card bg-barber-gray border border-gray-800 rounded-lg p-8 text-center">
+                    <div class="service-icon w-16 h-16 bg-barber-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <!-- Icon: Visit fontawesome.com/icons to find more icons -->
+                        <i class="fas fa-scissors text-barber-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-semibold text-white mb-2 uppercase">Classic Haircut</h3>
+                    <p class="text-gray-400 mb-4">
+                        Precision haircut tailored to your face shape and style preference
+                    </p>
+                    <div class="text-barber-gold font-oswald text-3xl font-bold">$30</div>
+                </div>
+                
+                <!-- SERVICE CARD 2 -->
+                <div class="service-card bg-barber-gray border border-gray-800 rounded-lg p-8 text-center">
+                    <div class="service-icon w-16 h-16 bg-barber-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-face-smile text-barber-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-semibold text-white mb-2 uppercase">Beard Trim</h3>
+                    <p class="text-gray-400 mb-4">
+                        Expert beard trimming and styling for a sharp, refined look
+                    </p>
+                    <div class="text-barber-gold font-oswald text-3xl font-bold">$15</div>
+                </div>
+                
+                <!-- SERVICE CARD 3 -->
+                <div class="service-card bg-barber-gray border border-gray-800 rounded-lg p-8 text-center">
+                    <div class="service-icon w-16 h-16 bg-barber-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-star text-barber-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-oswald text-2xl font-semibold text-white mb-2 uppercase">Royal Shave</h3>
+                    <p class="text-gray-400 mb-4">
+                        Traditional hot towel shave with premium products and techniques
+                    </p>
+                    <div class="text-barber-gold font-oswald text-3xl font-bold">$40</div>
+                </div>
+                
+            </div>
+            
+            <!-- ADDITIONAL SERVICES -->
+            <!-- CUSTOMIZE: Add or remove services as needed -->
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                
+                <div class="text-center p-4 bg-barber-gray/50 rounded-lg border border-gray-800 hover:border-barber-gold transition-all duration-300">
+                    <i class="fas fa-spray-can text-barber-gold text-2xl mb-2"></i>
+                    <h4 class="font-oswald text-lg uppercase text-white">Hair Styling</h4>
+                    <p class="text-barber-gold font-bold">$20</p>
+                </div>
+                
+                <div class="text-center p-4 bg-barber-gray/50 rounded-lg border border-gray-800 hover:border-barber-gold transition-all duration-300">
+                    <i class="fas fa-paintbrush text-barber-gold text-2xl mb-2"></i>
+                    <h4 class="font-oswald text-lg uppercase text-white">Hair Coloring</h4>
+                    <p class="text-barber-gold font-bold">$50+</p>
+                </div>
+                
+                <div class="text-center p-4 bg-barber-gray/50 rounded-lg border border-gray-800 hover:border-barber-gold transition-all duration-300">
+                    <i class="fas fa-spa text-barber-gold text-2xl mb-2"></i>
+                    <h4 class="font-oswald text-lg uppercase text-white">Facial Treatment</h4>
+                    <p class="text-barber-gold font-bold">$35</p>
+                </div>
+                
+                <div class="text-center p-4 bg-barber-gray/50 rounded-lg border border-gray-800 hover:border-barber-gold transition-all duration-300">
+                    <i class="fas fa-crown text-barber-gold text-2xl mb-2"></i>
+                    <h4 class="font-oswald text-lg uppercase text-white">Full Package</h4>
+                    <p class="text-barber-gold font-bold">$75</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==============================================
+         GALLERY SECTION
+         Showcase your work with images
+         ============================================== -->
+    <section id="gallery" class="py-20 sm:py-28 bg-barber-gray">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- SECTION HEADER -->
+            <div class="text-center mb-16">
+                <h2 class="font-oswald text-4xl sm:text-5xl font-bold text-white mb-4 uppercase tracking-wide">
+                    Our <span class="text-barber-gold">Gallery</span>
+                </h2>
+                <div class="w-24 h-1 bg-barber-gold mx-auto mb-4"></div>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    See our craftsmanship in action
+                </p>
+            </div>
+            
+            <!-- GALLERY GRID -->
+            <!-- CUSTOMIZE: Replace images with your own -->
+            <!-- Recommended size: 800x800px (square) -->
+            <!-- Click any image to view it fullscreen (handled by JavaScript) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                
+                <!-- GALLERY ITEM 1 -->
+                <div class="gallery-item relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80" 
+                         alt="Modern Haircut Style" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-barber-gold/0 group-hover:bg-barber-gold/20 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- GALLERY ITEM 2 -->
+                <div class="gallery-item relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80" 
+                         alt="Beard Trim Service" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-barber-gold/0 group-hover:bg-barber-gold/20 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- GALLERY ITEM 3 -->
+                <div class="gallery-item relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?w=800&q=80" 
+                         alt="Professional Barber at Work" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-barber-gold/0 group-hover:bg-barber-gold/20 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- GALLERY ITEM 4 -->
+                <div class="gallery-item relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=800&q=80" 
+                         alt="Classic Cut and Style" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-barber-gold/0 group-hover:bg-barber-gold/20 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- GALLERY ITEM 5 -->
+                <div class="gallery-item relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80" 
+                         alt="Modern Styling Techniques" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-barber-gold/0 group-hover:bg-barber-gold/20 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- GALLERY ITEM 6 -->
+                <div class="gallery-item relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80" 
+                         alt="Luxury Barbershop Interior" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-barber-gold/0 group-hover:bg-barber-gold/20 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==============================================
+         FOOTER / CONTACT SECTION
+         Business information and contact details
+         ============================================== -->
+    <footer id="contact" class="bg-barber-dark border-t border-barber-gold/20 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- FOOTER CONTENT GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- COLUMN 1: ABOUT / BRAND -->
+                <div>
+                    <!-- Business Name/Logo -->
+                    <!-- CUSTOMIZE: Update business name and description -->
+                    <h3 class="font-oswald text-3xl font-bold text-barber-gold mb-4 business-name">BarberKing</h3>
+                    <p class="text-gray-400 mb-6">
+                        Premium barbershop providing luxury grooming services for the modern gentleman since 2015.
+                    </p>
+                    
+                    <!-- SOCIAL MEDIA ICONS -->
+                    <!-- CUSTOMIZE: Update href attributes with your social media URLs -->
+                    <div class="flex space-x-4">
+                        <a href="#" data-social="facebook" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-barber-gold"></i>
+                        </a>
+                        <a href="#" data-social="instagram" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram text-barber-gold"></i>
+                        </a>
+                        <a href="#" data-social="twitter" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter text-barber-gold"></i>
+                        </a>
+                        <a href="#" data-social="youtube" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube text-barber-gold"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- COLUMN 2: CONTACT INFO -->
+                <div>
+                    <h4 class="font-oswald text-xl font-semibold text-white mb-6 uppercase">Contact Us</h4>
+                    <ul class="space-y-4">
+                        
+                        <!-- ADDRESS -->
+                        <!-- CUSTOMIZE: Update with your business address -->
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-barber-gold mt-1 mr-3"></i>
+                            <span class="text-gray-400">
+                                123 King Street West<br>
+                                Toronto, ON M5H 2Y4<br>
+                                Canada
+                            </span>
+                        </li>
+                        
+                        <!-- PHONE -->
+                        <!-- CUSTOMIZE: Update phone number -->
+                        <!-- Format: tel:+1XXXXXXXXXX (no spaces/dashes for tel: link) -->
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-barber-gold mr-3"></i>
+                            <a href="tel:+14165551234" data-phone class="text-gray-400 hover:text-barber-gold transition-colors">
+                                (416) 555-1234
+                            </a>
+                        </li>
+                        
+                        <!-- EMAIL -->
+                        <!-- CUSTOMIZE: Update email address -->
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-barber-gold mr-3"></i>
+                            <a href="mailto:info@barberking.com" data-email class="text-gray-400 hover:text-barber-gold transition-colors">
+                                info@barberking.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- COLUMN 3: BUSINESS HOURS -->
+                <div>
+                    <h4 class="font-oswald text-xl font-semibold text-white mb-6 uppercase">Opening Hours</h4>
+                    <ul class="space-y-3">
+                        
+                        <!-- CUSTOMIZE: Update business hours -->
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-400">Monday - Friday</span>
+                            <span class="text-barber-gold font-semibold">9:00 AM - 8:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-400">Saturday</span>
+                            <span class="text-barber-gold font-semibold">10:00 AM - 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Sunday</span>
+                            <span class="text-barber-gold font-semibold">Closed</span>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- COPYRIGHT BAR -->
+            <!-- CUSTOMIZE: Update copyright year and business name -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">
+                    &copy; <span id="currentYear">2024</span> <span class="business-name">BarberKing</span>. All rights reserved. | 
+                    <a href="#" class="text-barber-gold hover:text-barber-gold-light transition-colors">Privacy Policy</a> |
+                    <a href="#" class="text-barber-gold hover:text-barber-gold-light transition-colors">Terms of Service</a>
+                </p>
+            </div>
+            
+        </div>
+    </footer>
+    
+    <!-- ==============================================
+         JAVASCRIPT
+         Load configuration and main scripts
+         ============================================== -->
+    
+    <!-- Configuration file (customize business details here) -->
+    <script src="js/config.js"></script>
+    
+    <!-- Main functionality script -->
+    <script src="js/script.js"></script>
+    
+    <!-- Update copyright year automatically -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    
+</body>
+</html>

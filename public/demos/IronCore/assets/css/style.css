@@ -1,0 +1,465 @@
+/* ============================================
+   IronCore Athletics - Custom Styles
+   Premium Personal Training Studio
+   ============================================
+   
+   WHAT IS CSS?
+   CSS (Cascading Style Sheets) controls how HTML looks.
+   - Colors, fonts, spacing, animations
+   - This file adds custom styles beyond Tailwind
+   
+   ORGANIZATION:
+   1. CSS Variables (reusable colors/values)
+   2. Base styles (scrollbars, selection)
+   3. Animations (fade in, pulse, etc.)
+   4. Component styles (navbar, buttons, cards)
+   5. Responsive styles (mobile adjustments)
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES (Custom Properties)
+   ============================================
+   Define reusable values that can be used throughout.
+   Syntax: var(--variable-name)
+   Benefit: Change color in one place, updates everywhere!
+   ============================================ */
+:root {
+    /* Brand Colors */
+    --color-dark: #0f172a;       /* Main dark background */
+    --color-darker: #0a0f1c;     /* Darker sections */
+    --color-cyan: #06b6d4;       /* Primary accent color */
+    --color-cyan-glow: #22d3ee;  /* Hover accent color */
+    
+    /* Typography */
+    --font-oswald: 'Oswald', sans-serif;  /* Bold headers */
+    --font-inter: 'Inter', sans-serif;    /* Body text */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background-color: var(--color-cyan);
+    color: var(--color-darker);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-cyan);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-cyan-glow);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================
+   CSS animations add movement and life to the page.
+   
+   KEYFRAME SYNTAX:
+   @keyframes name {
+     from { starting state }
+     to { ending state }
+   }
+   
+   USAGE:
+   animation: name duration timing-function delay
+   ============================================ */
+
+/* --------------------------------------------
+   FADE IN UP
+   Elements start invisible and 30px lower,
+   then fade in while moving up.
+   Used for hero text on page load.
+   -------------------------------------------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;           /* Fully transparent */
+        transform: translateY(30px);  /* 30px lower */
+    }
+    to {
+        opacity: 1;           /* Fully visible */
+        transform: translateY(0);     /* Normal position */
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(6, 182, 212, 0.6);
+    }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(6, 182, 212, 0.1) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   NAVBAR STYLES
+   ============================================
+   The navigation bar has two states:
+   1. DEFAULT (at top): Transparent background
+   2. SCROLLED: Dark background with blur effect
+   ============================================ */
+
+/* Base navbar - transparent at top */
+#navbar {
+    transition: all 0.3s ease;  /* Smooth transition between states */
+}
+
+/* Scrolled state - added by JavaScript when scrolling down */
+#navbar.scrolled {
+    /* Semi-transparent dark background (95% opacity) */
+    background-color: rgba(15, 23, 42, 0.95);
+    
+    /* Blur effect behind navbar (glass morphism) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);  /* Safari support */
+    
+    /* Drop shadow for depth */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+#navbar.scrolled .nav-link {
+    color: #e5e7eb;
+}
+
+/* Nav Link Hover Effect */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-cyan);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   Button Styles
+   ============================================ */
+
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* ============================================
+   Program Cards
+   ============================================ */
+
+.program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(6, 182, 212, 0.05),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.program-card:hover::before {
+    left: 100%;
+}
+
+/* ============================================
+   Trainer Cards
+   ============================================ */
+
+.trainer-card img {
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+.trainer-card:hover img {
+    filter: grayscale(0%);
+}
+
+/* ============================================
+   Mobile Menu
+   ============================================ */
+
+#mobile-menu {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.active {
+    max-height: 300px;
+}
+
+.mobile-link {
+    position: relative;
+    padding-left: 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-link:hover {
+    padding-left: 10px;
+    color: var(--color-cyan);
+}
+
+/* Hamburger Animation */
+#mobile-menu-btn i {
+    transition: transform 0.3s ease;
+}
+
+#mobile-menu-btn.active i {
+    transform: rotate(90deg);
+}
+
+/* ============================================
+   Section Reveal Animation
+   ============================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   Gradient Text
+   ============================================ */
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-cyan), var(--color-cyan-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   Hero Background Pattern
+   ============================================ */
+
+.hero-pattern {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+}
+
+/* ============================================
+   Focus States for Accessibility
+   ============================================ */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Loading Animation
+   ============================================ */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   Responsive Typography
+   ============================================ */
+
+@media (max-width: 640px) {
+    .font-oswald {
+        letter-spacing: 0.02em;
+    }
+}
+
+/* ============================================
+   Image Placeholder Styles
+   ============================================ */
+
+.img-placeholder {
+    background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-cyan);
+}
+
+/* ============================================
+   Card Hover Lift Effect
+   ============================================ */
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Custom Underline
+   ============================================ */
+
+.underline-cyan {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-cyan::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-cyan);
+}
+
+/* ============================================
+   Stats Counter Animation
+   ============================================ */
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-number {
+    animation: countUp 0.6s ease forwards;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    #navbar,
+    #mobile-menu,
+    .btn-primary {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}

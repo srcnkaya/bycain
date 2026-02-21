@@ -75,6 +75,11 @@ const Shop = () => {
     window.open(lemonSqueezyUrl, '_blank', 'noopener,noreferrer');
   };
 
+  const handleLiveDemo = (previewUrl) => {
+    if (!previewUrl) return;
+    window.open(previewUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="shop" className="py-20 px-4 md:px-8 lg:px-20 bg-luxury-white">
       <div className="max-w-7xl mx-auto">
@@ -190,6 +195,16 @@ const Shop = () => {
                     Buy Now
                     <ExternalLink className="w-4 h-4" />
                   </button>
+
+                  {product.previewUrl && !product.previewUrl.includes('your-') && (
+                    <button
+                      onClick={() => handleLiveDemo(product.previewUrl)}
+                      className="w-full border border-luxury-slate text-luxury-slate px-4 py-2 rounded-xl hover:bg-luxury-slate hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium"
+                    >
+                      Live Demo
+                      <ExternalLink className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
