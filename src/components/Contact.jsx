@@ -28,7 +28,7 @@ const Contact = () => {
     {
       name: "Email",
       icon: <Mail className="w-6 h-6" />,
-      link: "mailto:info@bycain.com.com", // Update with your email
+      link: "mailto:info@bycain.com", // Update with your email
       handle: "info@bycain.com"
     },
     /*{
