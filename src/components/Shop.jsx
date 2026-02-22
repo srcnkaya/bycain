@@ -2,6 +2,7 @@ import { useState, useRef, useMemo } from 'react';
 import { ShoppingBag, Tag, ExternalLink, ChevronLeft, ChevronRight, Search, ChevronDown } from 'lucide-react';
 import { products, categories } from '../data/products';
 import ImageGallery from './ImageGallery';
+import { trackEvent } from '../utils/analytics';
 
 const PRODUCTS_PER_PAGE = 9;
 
@@ -23,6 +24,29 @@ const Shop = () => {
 
   // Randomize products only once when component mounts for "All" category
   const randomizedProducts = useMemo(() => shuffleArray(products), []);
+
+  const productJsonLd = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: products.map((product, index) => ({
+      '@type': 'Product',
+      position: index + 1,
+      name: product.title,
+      description: product.description,
+      image: product.images?.[0] ? `https://www.bycain.com${product.images[0]}` : undefined,
+      brand: {
+        '@type': 'Brand',
+        name: 'By Cain'
+      },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'USD',
+        price: String(product.price),
+        availability: 'https://schema.org/InStock',
+        url: product.lemonSqueezyUrl
+      }
+    }))
+  }), []);
 
   const toggleDescription = (productId) => {
     setExpandedDescriptions(prev => ({
@@ -71,17 +95,28 @@ const Shop = () => {
     document.getElementById('shop').scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const handleBuyNow = (lemonSqueezyUrl) => {
-    window.open(lemonSqueezyUrl, '_blank', 'noopener,noreferrer');
+  const handleBuyNow = (product) => {
+    trackEvent('buy_now_click', {
+      product_id: product.id,
+      product_name: product.title,
+      value: product.price
+    });
+    window.open(product.lemonSqueezyUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const handleLiveDemo = (previewUrl) => {
-    if (!previewUrl) return;
-    window.open(previewUrl, '_blank', 'noopener,noreferrer');
+  const handleLiveDemo = (product) => {
+    if (!product.previewUrl) return;
+    trackEvent('live_demo_click', {
+      product_id: product.id,
+      product_name: product.title,
+      demo_url: product.previewUrl
+    });
+    window.open(product.previewUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <section id="shop" className="py-20 px-4 md:px-8 lg:px-20 bg-luxury-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -189,7 +224,7 @@ const Shop = () => {
                   </div>
                   
                   <button
-                    onClick={() => handleBuyNow(product.lemonSqueezyUrl)}
+                    onClick={() => handleBuyNow(product)}
                     className="w-full bg-luxury-slate text-white px-4 py-2 rounded-xl hover:bg-luxury-slate/90 hover:shadow-lg hover:shadow-luxury-slate/30 transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium"
                   >
                     Buy Now
@@ -198,7 +233,7 @@ const Shop = () => {
 
                   {product.previewUrl && !product.previewUrl.includes('your-') && (
                     <button
-                      onClick={() => handleLiveDemo(product.previewUrl)}
+                      onClick={() => handleLiveDemo(product)}
                       className="w-full border border-luxury-slate text-luxury-slate px-4 py-2 rounded-xl hover:bg-luxury-slate hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium"
                     >
                       Live Demo
@@ -275,12 +310,35 @@ const Shop = () => {
         )}
 
         <div className="text-center mt-20 pt-12 border-t border-luxury-slateLight px-4">
-          <p className="text-luxury-charcoal/70 mb-4">
-            Need a custom solution?
+          <p className="text-luxury-charcoal mb-3 text-xl sm:text-2xl font-semibold">
+            Need a custom landing page that converts?
           </p>
-          <a href="#contact" className="luxury-button">
-            Get in Touch
-          </a>
+          <p className="text-luxury-charcoal/60 max-w-2xl mx-auto text-sm sm:text-base mb-6">
+            I design and build conversion-focused landing pages for founders and product teams. Fast delivery, clean code, modern stack.
+          </p>
+
+          {(() => {
+            const subject = encodeURIComponent('Custom landing page quote (ByCain)');
+            const body = encodeURIComponent(
+              `Hi Cain,\n\nI'm interested in a custom landing page.\n\nProject:\n- Website / Product name:\n- Goal (sell / waitlist / bookings / etc.):\n- Deadline:\n- Examples you like:\n\nThanks!`
+            );
+            const mailto = `mailto:info@bycain.com?subject=${subject}&body=${body}`;
+
+            return (
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={mailto}
+                  onClick={() => trackEvent('custom_quote_click', { source: 'shop_cta' })}
+                  className="luxury-button bg-luxury-slate text-luxury-white border-luxury-slate hover:shadow-lg hover:shadow-luxury-slate/30"
+                >
+                  Get a Quote
+                </a>
+                <a href="#contact" className="luxury-button">
+                  Contact Options
+                </a>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Terms = () => {
   useEffect(() => {
@@ -7,7 +8,13 @@ const Terms = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-luxury-black text-luxury-white pt-40 pb-20 px-4 md:px-8 lg:px-20">
+    <>
+      <SEO
+        title="Terms of Service"
+        description="Review ByCain terms for product licensing, usage, payments, and support."
+        path="/terms"
+      />
+      <div className="min-h-screen bg-luxury-black text-luxury-white pt-40 pb-20 px-4 md:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
         <a 
           href="/"
@@ -161,7 +168,8 @@ const Terms = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

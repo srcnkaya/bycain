@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Privacy = () => {
   useEffect(() => {
@@ -7,7 +8,13 @@ const Privacy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-luxury-black text-luxury-white pt-40 pb-20 px-4 md:px-8 lg:px-20">
+    <>
+      <SEO
+        title="Privacy Policy"
+        description="Read how ByCain collects, uses, and protects personal information."
+        path="/privacy"
+      />
+      <div className="min-h-screen bg-luxury-black text-luxury-white pt-40 pb-20 px-4 md:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
         <a 
           href="/"
@@ -125,7 +132,8 @@ const Privacy = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

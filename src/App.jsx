@@ -9,10 +9,27 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
+import SEO from './components/SEO';
 
 function HomePage() {
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'By Cain',
+    url: 'https://www.bycain.com',
+    description: 'Premium web templates, UI kits, and digital products for developers and entrepreneurs.'
+  };
+
   return (
     <>
+      <SEO
+        title="Premium Developer Templates & Digital Products"
+        description="Premium templates, UI kits, and digital products for developers and founders. Instant downloads and modern stacks."
+        path="/"
+        jsonLd={homeJsonLd}
+      />
       <Hero />
       <Shop />
       <TechStack />
@@ -49,6 +66,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />

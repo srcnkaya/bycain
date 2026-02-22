@@ -11,6 +11,12 @@ const Footer = () => {
           
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <Link 
+              to="/blog" 
+              className="text-luxury-platinum/70 hover:text-luxury-slate transition-colors"
+            >
+              Blog
+            </Link>
+            <Link 
               to="/privacy" 
               className="text-luxury-platinum/70 hover:text-luxury-slate transition-colors"
             >
