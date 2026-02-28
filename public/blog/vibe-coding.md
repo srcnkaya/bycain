@@ -215,7 +215,7 @@ You still need to understand:
 
 ### The New Developer Profile
 
-The successful developer in 2025+ looks like:
+The successful developer in 2026+ looks like:
 - **Builder** first, coder second
 - Can use AI effectively
 - Understands fundamentals
@@ -464,7 +464,7 @@ Why?
 - Make architectural decisions
 - Take full responsibility
 
-**Vibe coding isn't cheating.** It's just coding in 2025.
+**Vibe coding isn't cheating.** It's just coding in 2026.
 
 The sooner we accept that, the sooner we can focus on what actually matters: **building great products that help people.**
 
@@ -495,4 +495,4 @@ Just don't forget to understand what you're building.
 
 ---
 
-Now, if you'll excuse me, I have a project to ship. With AI assistance. Unapologetically. 🚀
+Now, if you'll excuse me, I have a project to ship. With AI assistance. Unapologetically. 
