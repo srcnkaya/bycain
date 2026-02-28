@@ -44,6 +44,15 @@ export const blogPosts = [
     tags: ['Landing Page', 'Conversion', 'UX'],
     contentPath: '/blog/landing-page-conversion-tips.md'
   },
+    {
+    slug: 'vibe-coding-ai-development',
+    title: 'Vibe Coding: Cheating or Just Coding Smarter?',
+    excerpt: 'An honest take on AI-assisted coding: what it is, whether it replaces traditional development, and why using AI tools isn\'t cheating. The future of software development is here.',
+    date: '2026-02-22',
+    readingTime: '11 min read',
+    tags: ['AI', 'Development', 'vibe coding', "copilot", "development", "opinion","future-of-coding"],
+    contentPath: '/blog/vibe-coding.md'
+  },
 ];
 
 export const getPostBySlug = (slug) => blogPosts.find((post) => post.slug === slug);
