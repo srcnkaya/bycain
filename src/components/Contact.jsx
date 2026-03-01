@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 // Custom Telegram Icon Component
 const TelegramIcon = ({ className }) => (
@@ -49,12 +49,6 @@ const Contact = () => {
       link: "https://twitter.com/heyimcain", // Update with your Twitter
       handle: "@heyimcain"
     },
-    {
-      name: "Instagram",
-      icon: <Instagram className="w-6 h-6" />,
-      link: "https://instagram.com/heyimcain", // Update with your Instagram
-      handle: "@heyimcain"
-    },
      {
       name: "Telegram",
       icon: <TelegramIcon className="w-6 h-6" />,
@@ -73,13 +67,11 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-center">
-            Let's Connect
+            Let’s Build Your Website
           </h2>
-          
+
           <p className="text-center text-luxury-platinum/70 mb-16 max-w-2xl mx-auto text-lg">
-            {/* [MANUAL FIX]: Update your contact section intro text */}
-            
-            Reach out through any channel below.
+            Tell us about your business and goals. You can reach out through any channel below to request a proposal.
           </p>
         </motion.div>
 
@@ -116,17 +108,7 @@ const Contact = () => {
           ))}
         </motion.div>
 
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="text-center pt-12 border-t border-luxury-gray"
-        >
-          <p className="text-luxury-platinum/50 text-sm">
-            © {new Date().getFullYear()} ByCain. All rights reserved.
-          </p>
-        </motion.div>
+        <div className="hidden" aria-hidden="true" />
       </div>
     </section>
   );

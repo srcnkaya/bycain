@@ -2,9 +2,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Shop from './components/Shop';
-import TechStack from './components/TechStack';
-import About from './components/About';
+import Work from './components/Work';
+import Services from './components/Services';
+import StoreCTA from './components/StoreCTA';
+import Process from './components/Process';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Privacy from './pages/Privacy';
@@ -16,24 +18,26 @@ import SEO from './components/SEO';
 function HomePage() {
   const homeJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'By Cain',
+    '@type': 'ProfessionalService',
+    name: 'ByCain',
     url: 'https://www.bycain.com',
-    description: 'Premium web templates, UI kits, and digital products for developers and entrepreneurs.'
+    description: 'Custom website design and development services for businesses that want a premium, high-converting online presence.'
   };
 
   return (
     <>
       <SEO
-        title="Premium Developer Templates & Digital Products"
-        description="Premium templates, UI kits, and digital products for developers and founders. Instant downloads and modern stacks."
+        title="Custom Business Websites | ByCain"
+        description="We design and build custom websites, landing pages, and redesigns for businesses that want a premium look and better conversions."
         path="/"
         jsonLd={homeJsonLd}
       />
       <Hero />
-      <Shop />
-      <TechStack />
-      <About />
+      <Work />
+      <Services />
+      <StoreCTA />
+      <Process />
+      <FAQ />
       <Contact />
     </>
   );

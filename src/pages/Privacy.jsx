@@ -11,127 +11,131 @@ const Privacy = () => {
     <>
       <SEO
         title="Privacy Policy"
-        description="Read how ByCain collects, uses, and protects personal information."
+        description="How ByCain collects, uses, and protects personal information for website services and store purchases."
         path="/privacy"
       />
       <div className="min-h-screen bg-luxury-black text-luxury-white pt-40 pb-20 px-4 md:px-8 lg:px-20">
-      <div className="max-w-4xl mx-auto">
-        <a 
-          href="/"
-          className="inline-flex items-center gap-2 text-luxury-slate hover:text-luxury-platinum transition-colors mb-8 relative z-[60]"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          Back to Home
-        </a>
+        <div className="max-w-4xl mx-auto">
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 text-luxury-slate hover:text-luxury-platinum transition-colors mb-8 mt-6 relative z-0"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to Home
+          </a>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
-          Privacy Policy
-        </h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">Privacy Policy</h1>
 
-        <div className="space-y-8 text-luxury-platinum/80 leading-relaxed">
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">1. Introduction</h2>
-            <p>
-              Welcome to ByCain ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and purchase our digital products.
+          <div className="space-y-8 text-luxury-platinum/80 leading-relaxed">
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">1. Overview</h2>
+              <p>
+                This Privacy Policy explains how ByCain (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects
+                personal information when you visit our website, contact us for custom website services, or purchase
+                ready-made products through our store.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">2. Information We Collect</h2>
+              <p className="mb-3">We may collect the following information:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Contact details (name, email, business information)</li>
+                <li>Project details you share for proposals and service inquiries</li>
+                <li>Purchase and transaction data from store orders</li>
+                <li>Technical data such as browser type, pages visited, and analytics events</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">3. How We Use Information</h2>
+              <p className="mb-3">We use your information to:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Respond to inquiries and prepare custom project proposals</li>
+                <li>Deliver purchased digital products and transaction confirmations</li>
+                <li>Improve website performance, user experience, and service quality</li>
+                <li>Protect against abuse, fraud, and unauthorized activity</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">4. Payments and Store Orders</h2>
+              <p>
+                Payments are processed by Lemon Squeezy. We do not store full payment card details on our servers.
+                Please review Lemon Squeezy&apos;s policy for details about their data handling and security practices.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">5. Analytics and Cookies</h2>
+              <p>
+                We use analytics and cookies to understand site usage (for example, CTA clicks and page interactions)
+                and to improve conversion performance. You can adjust cookie settings through your browser.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">6. Data Sharing</h2>
+              <p className="mb-3">We may share information with trusted providers that help us run the business, such as:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Payment processors</li>
+                <li>Hosting and analytics providers</li>
+                <li>Legal or regulatory authorities when required by law</li>
+              </ul>
+              <p className="mt-3">We do not sell your personal information.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">7. Data Retention and Security</h2>
+              <p>
+                We keep information only as long as needed for business, legal, and operational purposes. We use
+                reasonable technical and organizational safeguards, but no online system can be guaranteed 100% secure.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">8. Your Rights</h2>
+              <p className="mb-3">Depending on your location, you may have rights to:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Request access to your personal data</li>
+                <li>Request correction or deletion</li>
+                <li>Object to or limit certain processing</li>
+                <li>Opt out of non-essential communications</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">9. Third-Party Links</h2>
+              <p>
+                Our site may contain links to third-party websites or platforms. We are not responsible for their
+                privacy practices and recommend reviewing their policies directly.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">10. Policy Updates</h2>
+              <p>
+                We may update this policy from time to time. Updated versions will be posted on this page with a
+                revised date.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-luxury-slate mb-4">11. Contact</h2>
+              <p>
+                For privacy requests or questions, contact us at{' '}
+                <a href="mailto:info@bycain.com" className="text-luxury-slate hover:text-luxury-platinum underline">
+                  info@bycain.com
+                </a>
+                .
+              </p>
+            </section>
+
+            <p className="text-sm text-luxury-platinum/50 pt-8 border-t border-luxury-gray">
+              Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">2. Information We Collect</h2>
-            <p className="mb-3">We collect information that you provide directly to us when you:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Create an account or make a purchase</li>
-              <li>Subscribe to our newsletter or marketing communications</li>
-              <li>Contact us with inquiries or feedback</li>
-              <li>Participate in surveys or promotions</li>
-            </ul>
-            <p className="mt-3">
-              This information may include your name, email address, payment information, and any other details you choose to provide.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">3. How We Use Your Information</h2>
-            <p className="mb-3">We use the information we collect to:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Process and fulfill your orders</li>
-              <li>Provide customer support and respond to your inquiries</li>
-              <li>Send you transactional emails and order confirmations</li>
-              <li>Improve our products and services</li>
-              <li>Send marketing communications (with your consent)</li>
-              <li>Detect and prevent fraud or unauthorized activities</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">4. Payment Processing</h2>
-            <p>
-              All payment transactions are processed securely through Lemon Squeezy, our trusted payment processor. We do not store your credit card information on our servers. Please refer to Lemon Squeezy's privacy policy for information about how they handle your payment data.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">5. Data Sharing and Disclosure</h2>
-            <p className="mb-3">We may share your information with:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Service providers who assist us in operating our business</li>
-              <li>Payment processors to complete transactions</li>
-              <li>Law enforcement or regulatory agencies when required by law</li>
-            </ul>
-            <p className="mt-3">We do not sell your personal information to third parties.</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">6. Data Security</h2>
-            <p>
-              We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">7. Your Rights</h2>
-            <p className="mb-3">You have the right to:</p>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Access, update, or delete your personal information</li>
-              <li>Opt out of marketing communications</li>
-              <li>Request a copy of your data</li>
-              <li>Object to processing of your personal information</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">8. Cookies and Tracking</h2>
-            <p>
-              We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand user behavior. You can control cookie settings through your browser preferences.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">9. Children's Privacy</h2>
-            <p>
-              Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">10. Changes to This Policy</h2>
-            <p>
-              We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the "Last Updated" date.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-luxury-slate mb-4">11. Contact Us</h2>
-            <p>
-              If you have any questions or concerns about this Privacy Policy, please contact us through the contact information provided on our website.
-            </p>
-          </section>
-
-          <p className="text-sm text-luxury-platinum/50 pt-8 border-t border-luxury-gray">
-            Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </p>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

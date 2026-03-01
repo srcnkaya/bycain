@@ -17,9 +17,8 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Shop', href: '#shop', type: 'section' },
-    { name: 'Tech Stack', href: '#tech-stack', type: 'section' },
-    { name: 'About', href: '#about', type: 'section' },
+    { name: 'Work', href: '#work', type: 'section' },
+    { name: 'Services', href: '#services', type: 'section' },
     { name: 'Contact', href: '#contact', type: 'section' },
     { name: 'Blog', href: '/blog', type: 'route' },
   ];
@@ -98,7 +97,7 @@ const Header = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -111,6 +110,24 @@ const Header = () => {
               {link.name}
             </a>
           ))}
+
+          <a
+            href="#store"
+            onClick={(e) => handleNavClick(e, { href: '#store', type: 'section' })}
+            className={`font-medium tracking-wide transition-opacity hover:opacity-70 ${
+              useLightHeader ? 'text-black' : 'text-luxury-white'
+            }`}
+          >
+            Store
+          </a>
+
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, { href: '#contact', type: 'section' })}
+            className="px-4 py-2 rounded-xl bg-luxury-slate text-white text-sm font-medium hover:bg-luxury-slate/90 transition-all"
+          >
+            Get a Quote
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -138,6 +155,20 @@ const Header = () => {
                 {link.name}
               </a>
             ))}
+            <a
+              href="#store"
+              onClick={(e) => handleNavClick(e, { href: '#store', type: 'section' })}
+              className="block text-luxury-black font-medium py-2 hover:text-luxury-charcoal transition-colors"
+            >
+              Store
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, { href: '#contact', type: 'section' })}
+              className="block text-center px-4 py-3 rounded-xl bg-luxury-slate text-white font-medium"
+            >
+              Get a Quote
+            </a>
           </div>
         </div>
       )}
