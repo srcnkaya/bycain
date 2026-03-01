@@ -21,7 +21,13 @@ function HomePage() {
     '@type': 'ProfessionalService',
     name: 'ByCain',
     url: 'https://www.bycain.com',
-    description: 'Custom website design and development services for businesses that want a premium, high-converting online presence.'
+    description: 'Custom website design and development services for businesses that want a premium, high-converting online presence.',
+    areaServed: 'Canada',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Toronto',
+      addressCountry: 'CA'
+    }
   };
 
   return (

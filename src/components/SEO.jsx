@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_NAME = 'By Cain';
+const SITE_NAME = 'ByCain';
 const DEFAULT_IMAGE = 'https://www.bycain.com/logo/logo.png';
 
 const upsertMeta = (selector, attributes) => {
@@ -28,7 +28,7 @@ const upsertLink = (rel, href) => {
 const SEO = ({ title, description, path = '/', image = DEFAULT_IMAGE, type = 'website', robots = 'index, follow', jsonLd }) => {
   useEffect(() => {
     const canonical = `https://www.bycain.com${path}`;
-    const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Premium Developer Templates & Digital Products`;
+    const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Custom Websites for Businesses`;
 
     document.title = fullTitle;
     upsertMeta('meta[name="description"]', { name: 'description', content: description });
@@ -39,11 +39,13 @@ const SEO = ({ title, description, path = '/', image = DEFAULT_IMAGE, type = 'we
     upsertMeta('meta[property="og:type"]', { property: 'og:type', content: type });
     upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonical });
     upsertMeta('meta[property="og:image"]', { property: 'og:image', content: image });
+    upsertMeta('meta[property="og:site_name"]', { property: 'og:site_name', content: SITE_NAME });
 
     upsertMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });
     upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: fullTitle });
     upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description });
     upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: image });
+    upsertMeta('meta[name="twitter:url"]', { name: 'twitter:url', content: canonical });
 
     upsertLink('canonical', canonical);
 

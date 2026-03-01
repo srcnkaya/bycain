@@ -10,7 +10,7 @@ const Footer = () => {
               © {new Date().getFullYear()} ByCain. All rights reserved.
             </p>
             <p className="text-luxury-platinum/40 text-xs mt-1">
-              Designed and developed by ByCain.
+              Designed and developed by ByCain in Toronto, Canada.
             </p>
           </div>
 
