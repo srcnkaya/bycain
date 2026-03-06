@@ -85,7 +85,7 @@ const Header = () => {
           className="transition-opacity hover:opacity-80"
         >
           <img 
-            src="/logo/logo.png" 
+            src="/logo/logo.png?v=20260306" 
             alt="ByCain Logo" 
             width="120"
             height="30"
