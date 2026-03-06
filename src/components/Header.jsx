@@ -91,7 +91,7 @@ const Header = () => {
             height="30"
             fetchPriority="high"
             className={`h-30 w-auto transition-all duration-300 ${
-              useLightHeader ? 'invert' : ''
+              !useLightHeader ? 'invert' : ''
             }`}
           />
         </a>
