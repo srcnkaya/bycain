@@ -9,18 +9,25 @@ const POSTS_PER_PAGE = 10;
 
 const BlogList = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortOrder, setSortOrder] = useState('newest');
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredPosts = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
-    if (!query) return blogPosts;
+    const posts = !query
+      ? blogPosts
+      : blogPosts.filter((post) =>
+          post.title.toLowerCase().includes(query) ||
+          post.excerpt.toLowerCase().includes(query) ||
+          post.tags.some((tag) => tag.toLowerCase().includes(query))
+        );
 
-    return blogPosts.filter((post) =>
-      post.title.toLowerCase().includes(query) ||
-      post.excerpt.toLowerCase().includes(query) ||
-      post.tags.some((tag) => tag.toLowerCase().includes(query))
-    );
-  }, [searchQuery]);
+    return [...posts].sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+  }, [searchQuery, sortOrder]);
 
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
@@ -28,6 +35,11 @@ const BlogList = () => {
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
     setCurrentPage(1);
   };
 
@@ -52,15 +64,27 @@ const BlogList = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 relative">ByCain Blog</h1>
           <p className="text-sm sm:text-base text-luxury-charcoal/75 mb-6 relative">Weekly notes on setup, hosting, SEO, and growing template-based websites.</p>
 
-          <div className="relative">
-            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-luxury-charcoal/50 absolute left-4 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              placeholder="Search blog posts..."
-              className="w-full border border-luxury-slateLight rounded-xl pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 text-sm sm:text-base bg-white/95 text-luxury-black placeholder:text-luxury-charcoal/40 focus:outline-none focus:ring-2 focus:ring-luxury-slate/20 focus:border-luxury-slate shadow-sm"
-            />
+          <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+            <div className="relative">
+              <Search className="w-4 h-4 sm:w-5 sm:h-5 text-luxury-charcoal/50 absolute left-4 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                placeholder="Search blog posts..."
+                className="w-full border border-luxury-slateLight rounded-xl pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 text-sm sm:text-base bg-white/95 text-luxury-black placeholder:text-luxury-charcoal/40 focus:outline-none focus:ring-2 focus:ring-luxury-slate/20 focus:border-luxury-slate shadow-sm"
+              />
+            </div>
+
+            <select
+              value={sortOrder}
+              onChange={handleSortChange}
+              className="border border-luxury-slateLight rounded-xl px-3 py-2.5 sm:py-3 text-sm sm:text-base bg-white/95 text-luxury-black focus:outline-none focus:ring-2 focus:ring-luxury-slate/20 focus:border-luxury-slate shadow-sm"
+              aria-label="Sort blog posts"
+            >
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+            </select>
           </div>
         </div>
 
