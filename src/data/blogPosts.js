@@ -48,10 +48,19 @@ export const blogPosts = [
     slug: 'vibe-coding-ai-development',
     title: 'Vibe Coding: Cheating or Just Coding Smarter?',
     excerpt: 'An honest take on AI-assisted coding: what it is, whether it replaces traditional development, and why using AI tools isn\'t cheating. The future of software development is here.',
-    date: '2026-02-22',
+    date: '2026-03-01',
     readingTime: '11 min read',
     tags: ['AI', 'Development', 'vibe coding', "copilot", "development", "opinion","future-of-coding"],
     contentPath: '/blog/vibe-coding.md'
+  },
+     {
+    slug: 'is-seo-dead-in-the-age-of-ai',
+    title: 'Is SEO Dead in the Age of AI? What Google\'s AI Search Means for Your Website',
+    excerpt: 'Google\'s AI Overviews are changing how people search — and how websites survive. Here\'s what\'s actually dying, what\'s thriving, and how to protect your traffic and ad revenue in the AI era.',
+    date: '2026-03-07',
+    readingTime: '6 min read',
+    tags: ['SEO', 'AI', 'Google', 'Digital Marketing', 'Content Strategy', 'Website Traffic', 'AI Search', 'Blogging', 'Ad Revenue', 'Google AI Overviews'],
+    contentPath: '/blog/is-seo-dead-in-the-age-of-ai.md'
   },
 ];
 
